@@ -20,6 +20,7 @@ a {
 	text-decoration: none;
 	/* color: #E07000; */
 	color: #fff;
+	transition-duration: 200ms;
 }
 a:hover {
 	text-decoration: none;
@@ -153,9 +154,16 @@ header nav.header-nav button.menu {
 @media (max-width: 1200px) { #top-content-wrapper .top-container { width: 100%; } }
 @media (max-width: 800px) { #top-content-wrapper .top-container { width: 100%; } }
 #top-content-wrapper .top-container .top-content {
+	display: inline-block;
 	flex: 0 0 50%;
 	text-align: center;
-	padding: 30px 15px;
+	padding: 30px 15px 30px 15px;
+	transition-duration: 200ms;
+}
+#top-content-wrapper .top-content a { color: #ffffff; }
+#top-content-wrapper .top-content a:hover { color: #ffffff; }
+#top-content-wrapper .top-content:hover {
+	padding: 20px 15px 40px 15px;
 }
 @media (max-width: 800px) { #top-content-wrapper .top-container .top-content { flex: 0 0 100%; } }
 #top-content-wrapper .top-container .top-content + .top-content { border-left: dashed 1px #ffffff; }
@@ -205,11 +213,35 @@ header nav.header-nav button.menu {
 }
 .content {
 	position: relative;
-	flex: 0 0 33.3333%	;
 }
-@media (max-width: 1000px) { .content { flex: 0 0 50% } }
-@media (max-width: 800px) { .content { flex: 0 0 100% } }
-.content > div {
+/* 1分割 */
+.content.g1 { flex: 0 0 100%; }
+@media (max-width: 1000px) { .content.g1 { flex: 0 0 100% } }
+@media (max-width: 800px) { .content.g1 { flex: 0 0 100% } }
+.content.g1 > div {
+	background: #fff;
+	/* border: solid 1px #bbb; */
+	/* border-radius: 5px; */
+	padding: 10px;
+	margin: 10px;
+	text-align: center;
+}
+.content.g1 h3 {
+	color: #E8822A;
+	font-size: 32px;
+	margin-bottom: 20px;
+}
+
+/* 2分割 */
+.content.g2 { flex: 0 0 50%; }
+@media (max-width: 1000px) { .content.g2 { flex: 0 0 100% } }
+@media (max-width: 800px) { .content.g2 { flex: 0 0 100% } }
+
+/* 3分割 */
+.content.g3 { flex: 0 0 33.3333%; }
+@media (max-width: 1000px) { .content.g3 { flex: 0 0 50% } }
+@media (max-width: 800px) { .content.g3 { flex: 0 0 100% } }
+.content.g3 > div {
 	background: #fff;
 	border: solid 1px #bbb;
 	border-radius: 5px;
@@ -218,11 +250,7 @@ header nav.header-nav button.menu {
 	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 	text-align: center;
 }
-
-/* ---------------------------------------------------------------------- */
-/* コンテンツのロゴ */
-/* ---------------------------------------------------------------------- */
-.content div.genre {
+.content.g3 div.genre {
 	display: inline-block;
 	position: absolute;
 	top: 15px;
@@ -234,16 +262,16 @@ header nav.header-nav button.menu {
 	background-color: #E8822A;
 	color: #fff;
 }
-.content div.genre .fa {
+.content.g3 div.genre .fa {
 	font-size: 20px;
 }
-
-.content .logo {
+.content.g3 .logo {
 	display: block;
 	text-align: center;
 	margin-bottom: 15px;
+	height: 140px;
 }
-.content .logo .logo-font {
+.content.g3 .logo .logo-font {
 	display: inline-block;
 	color: #fff;
 	background-color: #E8822A;
@@ -254,8 +282,15 @@ header nav.header-nav button.menu {
 	border-radius: 70px;
 	padding-top: 15px;
 }
+.content.g3 .logo img {
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+}
 
-/* 丸ボタン */
+/* ---------------------------------------------------------------------- */
+/* ボタン */
+/* ---------------------------------------------------------------------- */
 .button-circle {
 	display: inline-block;
 	padding: 6px 10px;
@@ -270,5 +305,4 @@ header nav.header-nav button.menu {
 	background: #E07000;
 	color: #fff;
 }
-
 
