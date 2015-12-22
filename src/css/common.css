@@ -107,26 +107,60 @@ header nav.header-nav ul.list li a:hover {
 	background: #F3E1BC;
 	color: #E8822A;
 }
-@media (max-width: 800px) { header nav.header-nav ul.list { display: none; } }
 header nav.header-nav button.menu {
 	display: none;
-	position: absolute;
-	top: 0;
-	right: 15px;
-	background: none;
-	border: solid 1px #ffffff;
-	border-radius: 5px;
-	color: #ffffff;
-	font-size: 24px;
-	margin: 13px 0 0 0;
-	padding: 5px 10px;
-	cursor: pointer;
 }
 @media (max-width: 800px) {
+	header nav.header-nav ul.list {
+		display: none;
+		position: absolute;
+		top: 60px;
+		right: 0;
+		width: 100%;
+		height: auto;
+		list-style-type: none;
+		margin: 0;
+		background: #E8822A;
+		border-top: dashed 1px #fff;
+	}
+	header nav.header-nav ul.list li {
+		display: block;
+		width: auto;
+		font-size: 14px;
+		font-weight: bold;
+		height: 60px;
+		margin: 0;
+		padding: 0;
+	}
+	header nav.header-nav ul.list li a {
+		display: inline-block;
+		padding: 20px 10px 0 10px;
+		height: 60px;
+		width: 100%;
+		background: #E8822A;
+		color: #fff;
+		border-bottom: dashed 1px #fff;
+	}
+	header nav.header-nav ul.list li a:hover {
+		display: inline-block;
+		padding: 20px 10px 0 10px;
+		height: 60px;
+		background: #F3E1BC;
+		color: #E8822A;
+	}
 	header nav.header-nav button.menu {
 		display: inline-block;
-		height: 40px;
+		position: absolute;
+		top: 0;
+		right: 15px;
+		background: none;
+		border: solid 1px #ffffff;
+		border-radius: 5px;
+		color: #ffffff;
+		margin: 13px 0 0 0;
+		cursor: pointer;
 		width: 40px;
+		height: 40px;
 		padding: 0 0 0 0;
 		margin: 12px;
 		font-size: 24px;
