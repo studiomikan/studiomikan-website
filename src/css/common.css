@@ -217,7 +217,7 @@ header nav.header-nav button.menu {
 	color: #E8822A;
 	font-size: 28px;
 	font-weight: 300;
-	border-bottom: solid 1px #eee;
+	border-bottom: solid 1px #ccc;
 	margin-bottom: 20px;
 }
 
@@ -232,7 +232,7 @@ header nav.header-nav button.menu {
 @media (max-width: 800px) { .content.g3 { flex: 0 0 100% } }
 .content.g3 > div {
 	background: #fff;
-	border: solid 1px #bbb;
+	border: solid 1px #ccc;
 	border-radius: 5px;
 	padding: 10px;
 	margin: 10px;
@@ -329,8 +329,6 @@ header nav.header-nav button.menu {
 #top-content-wrapper .top-content:hover {
 	padding: 20px 15px 40px 15px;
 }
-/* #top-content-wrapper .content + .content { border-left: dashed 1px #ffffff; }                 */
-/* @media (max-width: 800px) { #top-content-wrapper .content + .content { border-left: none; } } */
 #top-content-wrapper .top-content .logo {
 	display: block;
 	text-align: center;
