@@ -17,6 +17,19 @@ $(function() {
 			onResize();
 		});
 	})();
+	// スクロール時にメニューに影をつける
+	(function() {
+		var onScroll = function() {
+			var head = $('header');
+			if ($(window).scrollTop() > 0) {
+				if (!head.hasClass('border-on')) head.addClass('border-on');
+			} else {
+				if (head.hasClass('border-on')) head.removeClass('border-on');
+			}
+		}
+		$(window).on('scroll', onScroll);
+		onScroll();
+	})();
 	// メニューボタン
 	(function() {
 		var button = $('header button.menu');

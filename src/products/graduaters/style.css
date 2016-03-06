@@ -1,0 +1,319 @@
+@charset "Shift_JIS";
+
+body
+{
+	background: #000000;
+	position: relative;
+	margin: 0px 0px 0px 0px;
+	text-align: left;
+	font-size: 14px;
+/*	font-family: "メイリオ","ＭＳ Ｐゴシック",sans-serif; */
+	font-family: sans-serif;
+	line-height: 130%;
+	color: #ffffff;
+}
+
+a
+{
+	outline: none;
+}
+
+img
+{
+	border: none;
+}
+
+.bold16px
+{
+	font-size: 16px;
+	font-weight: bold;
+}
+
+/* CLEAR */
+div.clear
+{
+	clear: left;
+}
+
+/* 全体 */
+div.divBody
+{
+	width: 800px;
+	text-align: left;
+}
+
+/* メイン */
+div#mainBox
+{
+	width: 800px;
+	height: 550px;
+	text-align: left;
+	padding: 0px 0px 0px 0px;
+	overflow: hidden;
+}
+
+/* トップ画像 */
+div#mainBox #siteTop
+{
+	width: 800px;
+	height: 550px;
+	text-align: left;
+	padding: 0px 0px 0px 0px;
+	background-image: url("./image/siteTop.jpg");
+	background-repeat: no-repeat;
+}
+
+div#siteTopDownload
+{
+	width: 210px;
+	height: 40px;
+	margin-top: 280px;
+	margin-left: 70px;
+	position: absolute;
+}
+
+/* 更新履歴 */
+div#whatsNew
+{
+	width: 270px;
+	height: 70px;
+	border: solid 1px #ffffff;
+	margin-top: 380px;
+	margin-left: 70px;
+	position: absolute;
+	overflow: auto;
+	font-size: 13px;
+}
+
+div#whatsNew td
+{
+	vertical-align: top;
+}
+
+/* ストーリー */
+div #mainBox #storyImage
+{
+	width: 800px;
+	height: 550px;
+	background-image: url("./image/story.jpg");
+	background-repeat: no-repeat;
+}
+
+/* キャラクター */
+div #mainBox #charImage
+{
+	width: 800px;
+	height: 550px;
+	background-image: url("image/char2.jpg");
+	background-repeat: no-repeat;
+}
+
+div #mainBox #charImage a
+{
+	display: block;
+	width: 400px;
+	height: 550px;
+}
+
+div #mainBox #charImage div
+{
+	float: left;
+}
+
+div #mainBox #charImage #l_yuuki
+{
+	width: 400px;
+	height: 550px;
+	background: url("./image/char1.jpg") 0px 0px;
+	background-repeat: no-repeat;
+	float: left;
+}
+#l_yuuki a:link		{ background: url("image/char1.jpg") 0px 0px no-repeat; }
+#l_yuuki a:visited	{ background: url("image/char1.jpg") 0px 0px no-repeat; }
+#l_yuuki a:hover	{ background: url("image/char2.jpg") 0px 0px no-repeat; }
+#l_yuuki a:active	{ background: url("image/char2.jpg") 0px 0px no-repeat; }
+
+div #mainBox #charImage #l_asuka
+{
+	width: 400px;
+	height: 550px;
+	background: url("./image/char1.jpg") -400px 0px;
+	background-repeat: no-repeat;
+}
+#l_asuka a:link		{ background: url("image/char1.jpg") -400px 0px no-repeat; }
+#l_asuka a:visited	{ background: url("image/char1.jpg") -400px 0px no-repeat; }
+#l_asuka a:hover	{ background: url("image/char2.jpg") -400px 0px no-repeat; }
+#l_asuka a:active	{ background: url("image/char2.jpg") -400px 0px no-repeat; }
+
+div #mainBox #charImage #l_kenji a
+{
+	width: 195px;
+	height: 108px;
+}
+
+div #mainBox #charImage #l_kenji
+{
+	width: 195px;
+	height: 108px;
+	margin: 0 0 0 0;
+	margin-left: 205px;
+	margin-top: -550px;
+	padding: 0 0 0 0;
+}
+#l_kenji a:link		{ background: url("image/charKenji1.jpg") 0px 0px no-repeat; }
+#l_kenji a:visited	{ background: url("image/charKenji1.jpg") 0px 0px no-repeat; }
+#l_kenji a:hover	{ background: url("image/charKenji2.jpg") 0px 0px no-repeat; }
+#l_kenji a:active	{ background: url("image/charKenji2.jpg") 0px 0px no-repeat; }
+
+
+div #mainBox #asukaImage
+{
+	width: 800px;
+	height: 550px;
+	background-image: url("./image/asuka.jpg");
+	background-repeat: no-repeat;
+}
+
+div #mainBox #yuukiImage
+{
+	width: 800px;
+	height: 550px;
+	background-image: url("./image/yuuki.jpg");
+	background-repeat: no-repeat;
+}
+
+div #mainBox #kenjiImage
+{
+	width: 800px;
+	height: 550px;
+	background-image: url("./image/kenji.jpg");
+	background-repeat: no-repeat;
+}
+
+/* スクリーンショット */
+div #mainBox .scshotBox
+{
+	width: 302px;
+	height: 227px;
+	margin: 0 10px 10px 0;
+	float: left;
+	border: solid 1px #ffffff;
+}
+
+/* スペック */
+div #mainBox #specBox
+{
+	width: 650px;
+	height: 500px;
+	background-image: url("./image/specBack.jpg");
+	background-repeat: no-repeat;
+	padding: 50px 0 0 150px;
+}
+
+div #mainBox .specTable
+{
+	width: 500px;
+	margin: 0 0 60px 0;
+	border: solid 1px #eeeeee;
+	border-collapse: collapse;
+}
+
+div #mainBox .specTable td
+{
+	padding: 2px 10px 2px 10px;
+	border: solid 1px #eeeeee;
+	text-align: center;
+}
+
+/* ダウンロード */
+div #mainBox #downlaodBox
+{
+	width: 800px;
+	height: 530px;
+	padding: 20px 0 0 0;
+	text-align: center;
+}
+
+/* メニュー */
+div#menuBox
+{
+	width: 800px;
+	height: 68px;
+	text-align: left;
+	background-image: url("image/button.gif");
+	background-repeat: no-repeat;
+	padding: 0px 0px 0px 46px;
+}
+
+div#menuBox div
+{
+	float: left;
+}
+
+div#menuBox a
+{
+	display: block;
+	height: 68px;
+}
+
+/* メニューバー */
+#m_toppage a:link		{ width: 75px;	background: url("image/button.gif") -46px 0px no-repeat; }
+#m_toppage a:visited	{ width: 75px;	background: url("image/button.gif") -46px 0px no-repeat; }
+#m_toppage a:hover		{ width: 75px;	background: url("image/button.gif") -46px -68px no-repeat; }
+#m_toppage a:active		{ width: 75px;	background: url("image/button.gif") -46px -68px no-repeat; }
+#m_toppage a.on 		{ width: 75px;	background: url("image/button.gif") -46px -68px no-repeat; }
+
+#m_story a:link			{ width: 102px;	background: url("image/button.gif") -121px 0px no-repeat; }
+#m_story a:visited		{ width: 102px;	background: url("image/button.gif") -121px 0px no-repeat; }
+#m_story a:hover		{ width: 102px;	background: url("image/button.gif") -121px -68px no-repeat; }
+#m_story a:active		{ width: 102px;	background: url("image/button.gif") -121px -68px no-repeat; }
+#m_story a.on			{ width: 102px;	background: url("image/button.gif") -121px -68px no-repeat; }
+
+#m_char a:link			{ width: 131px;	background: url("image/button.gif") -223px 0px no-repeat; }
+#m_char a:visited		{ width: 131px;	background: url("image/button.gif") -223px 0px no-repeat; }
+#m_char a:hover			{ width: 131px;	background: url("image/button.gif") -223px -68px no-repeat; }
+#m_char a:active		{ width: 131px;	background: url("image/button.gif") -223px -68px no-repeat; }
+#m_char a.on			{ width: 131px;	background: url("image/button.gif") -223px -68px no-repeat; }
+
+#m_scshot a:link		{ width: 173px;	background: url("image/button.gif") -354px 0px no-repeat; }
+#m_scshot a:visited		{ width: 173px;	background: url("image/button.gif") -354px 0px no-repeat; }
+#m_scshot a:hover		{ width: 173px;	background: url("image/button.gif") -354px -68px no-repeat; }
+#m_scshot a:active		{ width: 173px;	background: url("image/button.gif") -354px -68px no-repeat; }
+#m_scshot a.on			{ width: 173px;	background: url("image/button.gif") -354px -68px no-repeat; }
+
+#m_spec a:link			{ width: 91px;	background: url("image/button.gif") -527px 0px no-repeat; }
+#m_spec a:visited		{ width: 91px;	background: url("image/button.gif") -527px 0px no-repeat; }
+#m_spec a:hover			{ width: 91px;	background: url("image/button.gif") -527px -68px no-repeat; }
+#m_spec a:active		{ width: 91px;	background: url("image/button.gif") -527px -68px no-repeat; }
+#m_spec a.on			{ width: 91px;	background: url("image/button.gif") -527px -68px no-repeat; }
+
+#m_download a:link		{ width: 126px;	background: url("image/button.gif") -618px 0px no-repeat; }
+#m_download a:visited	{ width: 126px;	background: url("image/button.gif") -618px 0px no-repeat; }
+#m_download a:hover		{ width: 126px;	background: url("image/button.gif") -618px -68px no-repeat; }
+#m_download a:active	{ width: 126px;	background: url("image/button.gif") -618px -68px no-repeat; }
+#m_download a.on		{ width: 126px;	background: url("image/button.gif") -618px -68px no-repeat; }
+
+
+
+/* フッタ */
+div#footer
+{
+	text-align: left;
+	font-size: 12px;
+	color: #ffffff;
+	width: 800px;
+	height: 60px;
+	padding: 0px 0px 0px 20px;
+	color: #919191;
+}
+
+/* コピーライト */
+#copyright
+{
+	font-size: 12px;
+	font-family: "ＭＳ Ｐゴシック",sans-serif;
+	color: #919191;
+	vertical-align: top;
+}
+
+
