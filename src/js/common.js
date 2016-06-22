@@ -18,6 +18,7 @@ $(function() {
 		});
 	})();
 	// スクロール時にメニューに影をつける
+	/*
 	(function() {
 		var onScroll = function() {
 			var head = $('header');
@@ -30,6 +31,7 @@ $(function() {
 		$(window).on('scroll', onScroll);
 		onScroll();
 	})();
+	*/
 	// メニューボタン
 	(function() {
 		var button = $('header button.menu');

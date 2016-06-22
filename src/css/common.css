@@ -67,13 +67,10 @@ br.w { display: none; }
 header {
 	position: fixed;
 	width: 100%;
-	height: 61px;
+	height: 60px;
 	margin: 0;
 	background: #E8822A;
 	z-index: 10000;
-}
-header.border-on {
-	border-bottom: dashed 1px #eee;
 }
 header a {
 	text-decoration: none;
