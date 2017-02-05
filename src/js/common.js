@@ -10,11 +10,9 @@ $(function() {
 		});
 		$(document).on('pjax:fetch', function() {
 			// pjaxのページ遷移が行われる前
-			alert('pjax!');
 		});
 		$(document).on('pjax:render', function() {
 			// pjaxのページ遷移が完了した後
-			onResize();
 		});
 	})();
 	// スクロール時にメニューに影をつける
