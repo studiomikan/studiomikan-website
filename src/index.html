@@ -4,10 +4,10 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta http-equiv="Pragma" content="no-cache">
-		<meta http-equiv="Cache-Control" content="no-cache">
+
 		<title>スタジオ蜜柑</title>
 
+		<!-- icon -->
 		<link rel="shortcut icon" href="./favicons/favicon.ico" type="image/vnd.microsoft.icon">
 		<link rel="icon" href="./favicons/favicon.ico" type="image/vnd.microsoft.icon">
 		<link rel="apple-touch-icon" sizes="57x57" href="./favicons/apple-touch-icon-57x57.png">
@@ -28,129 +28,80 @@
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="./favicons/mstile-144x144.png">
 
-		<link rel="stylesheet" type="text/css" href="./css/reset.css" media="all">
-    	<link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css" />
-		<link rel="stylesheet" type="text/css" href="./css/common.css" media="all">
+		<!-- lib -->
 		<script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
-		<script type="text/javascript" src="./js/jquery.pjax.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="./lib/animate.min.css">
+		<script type="text/javascript" src="./lib/jquery.lettering.js"></script>
+		<script type="text/javascript" src="./lib/textillate/jquery.textillate.js"></script>
+
+		<!-- font -->
+		<!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/mplus1p.css"> -->
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css">
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:200,400">
+		<link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+
+		<!-- style -->
+		<link rel="stylesheet" type="text/css" href="./css/reset.css" media="all">
+		<link rel="stylesheet" type="text/css" href="./css/common.css" media="all">
 		<script type="text/javascript" src="./js/common.js"></script>
 	</head>
 	<body>
-		<!-- ヘッダ -->
-		<header class="clear">
-			<nav class="header-nav">
-				<h1 class="logo">
-					<a class="pjax-link" href="./index.html"><img src="./img/logo_w.png" alt="スタジオ蜜柑"></a>
-				</h1>
-				<ul id="header-menu" class="list">
-					<li><a class="pjax-link" href="./index.html">HOME</a></li><!--
-				 --><li><a class="pjax-link" href="./about.html">ABOUT</a></li><!--
-				 --><li><a class="pjax-link" href="./products.html">PRODUCTS</a></li><!--
-				 --><li><a class="pjax-link" href="./support.html">SUPPORT</a></li>
-				</ul>
-				<button class="menu" target="#header-menu"><span class="fa fa-bars"></span></button>
-			</nav>
-		</header>
 
-		<div id="global-content-wrapper">
+		<canvas id="back-anim-canvas"></canvas>
 
-			<!-- トップコンテンツ -->
-			<div id="top-content-wrapper">
-				<div class="container top-text">
-					<div class="content g1">
-						<h2>PCゲーム、スマホゲーム、ゲーム開発ツールのスタジオ蜜柑</h2>
-					</div>
-				</div>
-				<div class="container">
-					<div class="content g2">
-						<a class="top-content pjax-link" href="">
-							<div class="logo">
-								<span class="fa fa-gamepad logo-font"></span>
-							</div>
-							<h3>PCゲーム、スマホゲーム開発</h3>
-							<p>
-								レトロっぽい2Dゲーム、ノベルゲームなど<br>
-								気の向くままに製作中
-							</p>
-						</a>
-					</div>
-					<div class="content g2">
-						<a class="top-content top-content-border pjax-link" href="">
-							<div class="logo">
-								<span class="fa fa-wrench logo-font"></span>
-							</div>
-							<h3>ツール開発</h3>
-							<p>ノベルゲームエンジンを作れたらいいなと活動中</p>
-						</a>
-					</div>
-				</div>
-			</div>
-	
-			<div class="container-base">
-				<div class="container-wrapper" style="padding-top: 55px">
-					<div class="container">
-						<div class="content g1">
-							<div>
-								<h3>NEWS</h3>
-								<ul style="">
-									<li>[ 2016-03-06 ] サイトリニューアル</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="container">
-						<div class="content g3">
-							<div>
-								<div class="genre">
-									<span class="fa fa-wrench"></span>
-								</div>
-								<div class="logo">
-									<span class="logo-font" style="padding-top:0">P</span>
-								</div>
-								ノベルゲームエンジン "Ponkan" をこっそりと開発中です。
-								動かないものしか上がっていませんが、開発状況は
-								<a href="https://github.com/okayumoka/Ponkan">Github</a>
-								を参照。
-							</div>
-						</div>
-						<div class="content g3">
-							<div>
-								<div class="genre">
-									<span class="fa fa-gamepad"></span>
-								</div>
-								<div class="logo">
-									<a href="./products/graduaters/">
-										<img src="./img/graduaters_icon.png" alt="グラディエイターズ！" width="140" height="140">
-									</a>
-								</div>
-								Windows / Android用ノベルゲーム<br>
-								『Graduaters!　～グラディエイターズ！～』<br>
-								公開中です。
-							</div>
-						</div>
-						<div class="content g3">
-							<div>
-								<div class="genre">
-									<span class="fa fa-gamepad"></span>
-								</div>
-								<div class="logo">
-									<a href="./products/blocks/">
-										<img src="./img/blocks_icon.png" alt="その日、空から落ちてきたBlocks" width="140" height="140">
-									</a>
-								</div>
-								Windows用ミニアクションゲーム<br>
-								『その日、空から落ちてきたBlocks』<br>
-								公開中です。
-								</div>
-							</div>
-						</div>
-					</div>
-				</div><!-- end of container-wrapper -->
-			</div><!-- end of container-base -->
+		<div id="main-body">
+			<article class="left-block">
+				<nav class="vcenter">
+					<h1>
+						<img src="./img/logo.png" width="200" alt="スタジオ蜜柑">
+					</h1>
+					<ul class="menu">
+						<li><a class="underline" href="./index.html">Home</a></li>
+						<li><a class="underline" href="./index.html">About</a></li>
+						<li><a class="underline" href="./index.html">Products</a></li>
+						<li><a class="underline" href="./index.html">Contact</a></li>
+					</ul>
+					<span class="copy">
+						&copy; 2017 Studio Mikan.
+					</span>
+				</nav>
+			</article>
 
-		</div><!-- end of global-content-wrapper -->
-		<footer>
-			&copy; 2009-2017 Studio Mikan.
-		</footer>
+			<article class="content">
+				Create Games for PC and smart phones.
+			</article>
+
+			<article class="content">
+				<h2>About :</h2>
+				<p>
+					スタジオ蜜柑は、PCゲーム、スマホゲーム、ゲーム開発ツールなどを公開するサークルです。<br>
+					基本一人で活動しています。
+				</p>
+				<p>
+					当サイトは基本的に最新のブラウザでしか閲覧できません。<br>
+					古いブラウザを利用している人は、Webにかかわるすべての人のためにも、今すぐアップデートしましょう。
+				</p>
+			</article>
+
+			<article class="content">
+				<h2>Products :</h2>
+				<p>
+					<img class="thumb" src="./img/thumb_ponkan.jpg" width="200" alt="Ponkan">
+					<img class="thumb" src="./img/thumb_graduaters.jpg" width="200" alt="グラディエイターズ！">
+					<img class="thumb" src="./img/thumb_blocks.jpg" width="200" alt="その日、空から落ちてきたBlocks">
+				</p>
+			</article>
+
+			<article class="content">
+				<h2>Contact :</h2>
+				<p>
+					製作物に関する質問・スタッフへのメッセージ・その他のお問い合わせについては、<br>
+					studiomikan★gmail.com（★は@に変換）へメールしていただくか、
+					または <a href="https://twitter.com/__okayu">Twitter</a> からご連絡ください。
+				</p>
+			</article>
+
+		</div>
+
 	</body>
 </html>
