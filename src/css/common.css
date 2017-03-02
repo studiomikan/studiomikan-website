@@ -5,7 +5,7 @@
 }
 html {
 	font-size: 10.5pt;
-	/* font-family: 'Mplus 1p', 'メイリオ', sans-serif; */
+	font-size: 12pt;
 	font-family: 'Noto Sans Japanese', 'メイリオ', sans-serif;
 	font-weight: 200;
 	height: 100%;
@@ -31,7 +31,7 @@ a.underline:after {
   display: inline-block;
   width: 0;
   height: 0;
-  border-top: solid 1px #ffaa01;
+  border-top: solid 2px #ffaa01;
   background: rgba(255,255,255,0);
   transition: 200ms;
 }
@@ -119,6 +119,12 @@ h2 {
 	margin-bottom: 10px;
 }
 
+.words {
+	font-family: 'Nixie One', serif;
+	font-size: 2em;
+	color: rgba(30,30,30,0.3);
+}
+
 .content {
 	margin: 0 0 0 250px;
 	padding: 20px 0;
@@ -126,9 +132,25 @@ h2 {
 .content p {
 	padding: 10px 0;
 }
-
-.thumb {
-	margin-right: 10px;
+.product-box {
+	display: inline-block;
+	position: relative;
+	border-radius: 7px;
+	border: solid 1px #aaa;
+	background: rgba(255,255,255,0.5);
+	padding: 15px;
 }
+.product-box .thumb {
+	float: left;
+	width: 250px;
+	height: 250px;
+	border: solid 1px #aaa;
+}
+.product-box .text{
+	float: right;
+	padding: 15px;
+	width: 250px;
+}
+
 
 

@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
 				var c = {
 					//x: canvas.width / 2,
 					x: 125,
-					y: canvas.height / 2,
+					y: canvas.height / 2 - 75,
 					size: minSize + (maxSize - minSize) * Math.random(),
 					angle: Math.PI * 2 * Math.random(),
 					speed: minSpeed + (maxSpeed - minSpeed) * Math.random()
