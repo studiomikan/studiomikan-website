@@ -1,11 +1,11 @@
 @charset="UTF-8";
 
+/* General */
 *, *:before, *:after {
 	box-sizing: border-box;
 }
 html {
 	font-size: 10.5pt;
-	font-size: 12pt;
 	font-family: 'Noto Sans Japanese', 'メイリオ', sans-serif;
 	font-weight: 200;
 	height: 100%;
@@ -20,35 +20,26 @@ body {
 }
 a {
 	position: relative;
+	display: inline-block;
 	text-decoration: none;
 	color: #222;
 }
-a.underline:before,
 a.underline:after {
-  position: absolute;
-  top: 1.4em;
-  content: "  ";
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-top: solid 2px #ffaa01;
-  background: rgba(255,255,255,0);
-  transition: 200ms;
+	content: "";
+	position: absolute;
+	top: 1.3em;
+	left: 0;
+	display: inline-block;
+	width: 110%;
+	height: 100%;
+	border-top: solid 2px #ffaa01;
+	background: rgba(255,255,255,0);
+	transition: 200ms;
+	transform: scaleX(0);
 }
-a.underline:before{
-  left: 50%;
+a.underline:hover:after {
+	transform: scaleX(1);
 }
-
-a.underline:after{
-  right: 50%;
-}
-
-a.underline:hover:before,
-a.underline:hover:after{
-  width: 55%;
-}
-
-
 .clear:after {
 	content: " ";
 	display: block;
@@ -58,22 +49,19 @@ a.underline:hover:after{
 	clear: both;
 	visibility: hidden;
 }
-
-/* 横方向中央寄せ */
 .hcenter {
+	/* horizontal center */
 	margin-left: auto;
 	margin-right: auto;
 }
-
-/* 縦方向中央寄せ */
 .vcenter {
+	/* vertical center */
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
 }
-
-/* 背景アニメ用canvas */
 #back-anim-canvas {
+	/* background animation canvas */
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -81,21 +69,22 @@ a.underline:hover:after{
 	z-index: 1;
 }
 
-/* コンテンツ配置先 */
-#main-body {
+#foreground-body {
+	/* forground */
 	position: relative;
 	z-index: 100;
 }
 
-
-/* 左側 */
-.left-block {
+/* menu */
+.menu-block {
 	position: fixed;
 	top: 20px;
 	left: 20px;
 	bottom: 20px;
 	width: 230px;
-	border-right: dashed 1px #333;
+	border-right: dashed 1px #aaa;
+	padding-right: 20px;
+	text-align: right;
 }
 .menu {
 	margin: 20px 0;
@@ -104,10 +93,12 @@ a.underline:hover:after{
 	margin: 5px 0;
 	font-family: 'Raleway', 'Noto Sans Japanese', 'メイリオ', sans-serif;
 	font-weight: 400;
+	font-size: 1.1em;
 }
 .copy {
 	font-family: 'Raleway', 'Noto Sans Japanese', 'メイリオ', sans-serif;
 	font-weight: 400;
+	text-align: right;
 }
 
 h1, h2 {
@@ -118,13 +109,14 @@ h2 {
 	font-weight: 200;
 	margin-bottom: 10px;
 }
-
 .words {
-	font-family: 'Nixie One', serif;
+	/* font-family: 'Nixie One', serif; */
+	font-family: 'Carter One', serif;
 	font-size: 2em;
 	color: rgba(30,30,30,0.3);
 }
 
+/* Content */
 .content {
 	margin: 0 0 0 250px;
 	padding: 20px 0;
@@ -132,6 +124,8 @@ h2 {
 .content p {
 	padding: 10px 0;
 }
+
+/* Products: */
 .product-box {
 	display: inline-block;
 	position: relative;
@@ -139,18 +133,65 @@ h2 {
 	border: solid 1px #aaa;
 	background: rgba(255,255,255,0.5);
 	padding: 15px;
+	margin: 0 20px 20px 0;
+	width: 560px;
+	height: 260px;
 }
 .product-box .thumb {
 	float: left;
-	width: 250px;
-	height: 250px;
+	width: 228px;
+	height: 228px;
 	border: solid 1px #aaa;
 }
 .product-box .text{
 	float: right;
-	padding: 15px;
-	width: 250px;
+	padding: 0 0 0 15px;
+	width: 295px;
+}
+.product-box .text .title {
+	padding: 0 0 5px 0;
+	font-weight: bold;
+}
+.product-box .text .genre {
+	padding: 0 0 10px 0;
+	border-bottom: solid 1px #aaa;
+}
+.product-box .text .genre+.detail {
+	padding: 10px 0 5px 0;
+}
+.product-box .text .detail {
+	padding: 5px 0;
+	font-size: 0.9em;
 }
 
-
+/* Member */
+.content .okayu {
+	width: 150px;
+	height: 150px;
+	border: solid 1px #aaa;
+	border-radius: 100px;
+	float: left;
+	margin-top: 15px;
+}
+.content .okayu-text {
+	float: left;
+	margin: 40px 0 0 20px;
+	font-family: 'Raleway', 'Noto Sans Japanese', 'メイリオ', sans-serif;
+	font-weight: 400;
+	font-size: 1.1em;
+}
+.content .okayu-text a {
+	border: solid 1px #222;
+	display: inline-block;
+	padding: 5px 15px;
+	margin: 7px 10px 0 -2px;
+	background: rgba(255,255,255,0.5);
+	border-radius: 3px;
+	transition: 200ms;
+}
+.content .okayu-text a:hover {
+	border: solid 1px #ffaa01;
+	color: #ffaa01;
+	transition: 200ms;
+}
 

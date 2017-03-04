@@ -29,14 +29,15 @@
 		<meta name="msapplication-TileImage" content="./favicons/mstile-144x144.png">
 
 		<!-- lib -->
-		<script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="./lib/animate.min.css">
+		<script type="text/javascript" src="./lib/smooth-scroll.min.js"></script>
 
 		<!-- font -->
 		<!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/mplus1p.css"> -->
 		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css">
 		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:200,400">
-		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Nixie+One">
+		<!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Nixie+One"> -->
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Carter+One">
 		<link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
 
 		<!-- style -->
@@ -46,19 +47,23 @@
 	</head>
 	<body>
 
+		<!-- background animation -->
 		<canvas id="back-anim-canvas"></canvas>
 
-		<div id="main-body">
-			<article class="left-block">
+		<!-- foreground contents start -->
+		<div id="foreground-body">
+
+			<article class="menu-block">
 				<nav class="vcenter">
 					<h1>
-						<img src="./img/logo.png" width="200" alt="スタジオ蜜柑">
+						<img src="./img/logo.png" width="210" alt="スタジオ蜜柑">
 					</h1>
 					<ul class="menu">
-						<li><a class="underline" href="./index.html">Home</a></li>
-						<li><a class="underline" href="./index.html">About</a></li>
-						<li><a class="underline" href="./index.html">Products</a></li>
-						<li><a class="underline" href="./index.html">Contact</a></li>
+						<li><a class="underline" href="#home" data-scroll>Home</a></li>
+						<li><a class="underline" href="#about" data-scroll>About</a></li>
+						<li><a class="underline" href="#products" data-scroll>Products</a></li>
+						<li><a class="underline" href="#member" data-scroll>Member</a></li>
+						<li><a class="underline" href="#contact" data-scroll>Contact</a></li>
 					</ul>
 					<span class="copy">
 						&copy; 2017 Studio Mikan.
@@ -66,12 +71,13 @@
 				</nav>
 			</article>
 
-			<article class="content words">
+			<article id="home" class="content words">
 				We don’t stop playing because we grow old;<br>
 				we grow old because we stop playing.
 			</article>
 
-			<article class="content">
+			<!-- About: -->
+			<article id="about" class="content">
 				<h2>About :</h2>
 				<p>
 					スタジオ蜜柑は、PCゲーム、スマホゲーム、ゲーム開発ツールなどを公開するサークルです。<br>
@@ -83,32 +89,99 @@
 				</p>
 			</article>
 
-			<article class="content">
+			<!-- Products: -->
+			<article id="products" class="content">
 				<h2>Products :</h2>
 				<div class="product-box">
-					<img class="thumb" src="./img/thumb_graduaters.jpg" width="250" alt="グラディエイターズ！">
-					<p class="text">
-						あいうえお
-					</p>
+					<a href="https://github.com/okayumoka/Ponkan2">
+						<img class="thumb" src="./img/thumb_ponkan.jpg" width="228" alt="Ponkan">
+					</a>
+					<div class="text vcenter">
+						<p class="title">
+							<a href="https://github.com/okayumoka/Ponkan2">Ponkan2</a>
+						</p>
+						<p class="genre">
+							HTML5 Canvas novel game engine
+						</p>
+						<p class="detail">
+							HTML5 Canvas で実装された、ブラウザで動作するノベルゲーム用エンジンです。
+						</p>
+						<p class="detail">
+							現在開発中につき、まだまだ動きません。
+						</p>
+					</div>
 				</div>
 				<div class="product-box">
-					<img class="thumb" src="./img/thumb_blocks.jpg" width="200" alt="その日、空から落ちてきたBlocks">
-					<p class="text">
-						あいうえお
+					<a href="./products/graduaters/">
+						<img class="thumb" src="./img/thumb_graduaters.jpg" width="228" alt="グラディエイターズ！">
+					</a>
+					<div class="text vcenter">
+						<p class="title">
+							<a href="./products/graduaters/">Graduaters!　～グラディエイターズ！～</a>
+						</p>
+						<p class="genre">
+							ADV (Novel) ｜ Windows, Android
+						</p>
+						<p class="detail">
+							3年間通った学校を卒業したその日、<br>
+							幼なじみから1通のメールが届く。
+						</p>
+						<p class="detail">
+							「今夜は学校に忍びこむから、<br>
+							　ちゃんと来るように」
+						</p>
+						<p class="detail">
+							俺は久々に夜の学校へと足を向ける。<br>
+							過去から正しく卒業するために。
+						</p>
+					</div>
+				</div>
+				<div class="product-box">
+					<a href="./products/blocks/">
+						<img class="thumb" src="./img/thumb_blocks.jpg" width="228" alt="その日、空から落ちてきたBlocks">
+					</a>
+					<div class="text vcenter">
+						<p class="title">
+							<a href="./products/blocks/">その日、空から落ちてきたBlocks</a>
+						</p>
+						<p class="genre">ACT ｜ Windows</p>
+						<p class="detail">
+							空から降り注ぐ、色とりどりのBlocks。
+						</p>
+						<p class="detail">
+							二人のキャラクターを同時に操り、 降り注ぐBlocksから生き延びろ！<br>
+							お手軽ミニアクションゲーム。
+						</p>
+					</div>
+				</div>
+			</article>
+
+			<!-- Menber: -->
+			<article id="member" class="content">
+				<h2>Member :</h2>
+				<div class="clear">
+					<img class="okayu" src="./img/okayu.jpg" alt="okayu icon" width="150">
+					<p class="okayu-text">
+						okayu<br>
+						<a href="//twitter.com/__okayu">Twitter</a>
+						<a href="//okayu-moka.hatenablog.com/">Blog</a>
+						<a href="//github.com/okayumoka">GitHub</a>
 					</p>
 				</div>
 			</article>
 
-			<article class="content">
+			<!-- Contact: -->
+			<article id="contact" class="content">
 				<h2>Contact :</h2>
 				<p>
 					製作物に関する質問・スタッフへのメッセージ・その他のお問い合わせについては、<br>
 					studiomikan★gmail.com（★は@に変換）へメールしていただくか、
-					または <a href="https://twitter.com/__okayu">Twitter</a> からご連絡ください。
+					または <a href="//twitter.com/__okayu">Twitter</a> からご連絡ください。
 				</p>
 			</article>
 
 		</div>
+		<!-- foreground contents end -->
 
 	</body>
 </html>

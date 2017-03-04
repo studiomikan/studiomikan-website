@@ -1,6 +1,12 @@
 // common.js
-
 document.addEventListener('DOMContentLoaded', function() {
+	// スクロール
+	(function() {
+		smoothScroll.init({
+			updateURL: false,
+			easing: 'easeInOutQuad'
+		});
+	})();
 
 	// start 背景アニメ
 	(function() {
