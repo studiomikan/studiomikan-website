@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', function() {
 		var color = 'rgba(255, 170, 1, 0.3)';
 		var maxSize = 30;
 		var minSize = 100;
-		var circleNum = 15;
-		var minSpeed = 0.1;
-		var maxSpeed = 2;
+		var minSpeed = 0.5;
+		var maxSpeed = 1.5;
 		var bound = 0.2;
+		var circleNum = 15;
 
 		// フィールド
 		var canvas = null;
@@ -30,6 +30,17 @@ document.addEventListener('DOMContentLoaded', function() {
 			canvas.width = window.innerWidth;
 			canvas.height = window.innerHeight;
 			context = canvas.getContext('2d');
+			// ウィンドウのサイズによって丸の量を変える
+			var w = window.innerWidth;
+			if (w > 1920) {
+				circleNum = 20;
+			} else if (w > 1600) {
+				circleNum = 15;
+			} else if (w > 1024) {
+				circleNum = 10;
+			} else {
+				circleNum = 7;
+			}
 		};
 
 		// サークル情報を生成
@@ -57,8 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
 				timer = window.setTimeout(function() {
 					canvas.width = window.innerWidth;
 					canvas.height = window.innerHeight;
-					console.log('resize: canvas ' + canvas.width + ',' + canvas.height);
-					console.log('resize: canvas ' + window.innerWidth + ',' + window.innerHeight);
+					// console.log('resize: canvas ' + canvas.width + ',' + canvas.height);
+					// console.log('resize: canvas ' + window.innerWidth + ',' + window.innerHeight);
 					timer = null;
 				}, 200);
 			});
@@ -91,12 +102,13 @@ document.addEventListener('DOMContentLoaded', function() {
 				var moveY = c.speed * Math.sin(c.angle);
 				c.x += moveX;
 				c.y += moveY;
-				// 跳ね返り
 				if (c.x <= 0 || canvasWidth <= c.x) {
+					// 跳ね返り
 					c.angle = Math.atan2(moveY, -moveX);
 					c.x = c.x <= 0 ? 0 : canvasWidth;
 				}
 				if (c.y <= 0 || canvasHeight <= c.y) {
+					// 跳ね返り
 					c.angle = Math.atan2(-moveY, moveX);
 					c.y = c.y <= 0 ? 0 : canvasHeight;
 				}
@@ -108,6 +120,13 @@ document.addEventListener('DOMContentLoaded', function() {
 			var requestAnimationFrame = 
 				window.requestAnimationFrame || window.mozRequestAnimationFrame ||
 				window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+			var requestFrame = function(loopFunc) {
+				if (requestAnimationFrame) {
+					requestAnimationFrame(loopFunc);
+				} else {
+					window.setTimeout(loopFunc, 33);
+				}
+			};
 			var loopFunc = function() {
 				try {
 					move();
@@ -115,9 +134,9 @@ document.addEventListener('DOMContentLoaded', function() {
 				} catch (e) {
 					console.log(e);
 				}
-				requestAnimationFrame(loopFunc);
+				requestFrame(loopFunc);
 			};
-			requestAnimationFrame(loopFunc);
+			requestFrame(loopFunc);
 		};
 
 		init();
