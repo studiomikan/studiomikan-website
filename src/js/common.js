@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	(function() {
 		smoothScroll.init({
 			updateURL: false,
-			easing: 'easeInOutQuad'
+			easing: 'easeInOutQuad',
+			offset: 40
 		});
 	})();
 
