@@ -252,7 +252,8 @@ h2 {
 	padding: 15px;
 	margin: 0 20px 20px 0;
 	width: 560px;
-	height: 260px;
+	height: auto;
+	min-height: 260px;
 }
 .product-box .thumb-link {
 	position: absolute;
@@ -286,12 +287,14 @@ h2 {
 }
 @media (max-width: 959px) {
 	/* product-box for tablet */
+	.product-box {
+		width: 100%;
+		min-height: 260px;
+	}
 }
 @media (max-width: 599px) {
 	/* product-box for mobile */
 	.product-box {
-		width: 100%;
-		height: auto;
 		min-height: 200px;
 	}
 	.product-box .text {

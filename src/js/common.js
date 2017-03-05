@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
 	(function() {
 		// 設定
 		var color = 'rgba(255, 170, 1, 0.3)';
-		var maxSize = 30;
-		var minSize = 100;
-		var minSpeed = 0.5;
-		var maxSpeed = 1.5;
-		var bound = 0.2;
+		var minSize = 30;
+		var maxSize = 100;
+		var minSpeed = 0.02;
+		var maxSpeed = 0.05;
 		var circleNum = 15;
+		// 速さ × 時間 ＝ 距離
 
 		// フィールド
 		var canvas = null;
@@ -68,8 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
 				timer = window.setTimeout(function() {
 					canvas.width = window.innerWidth;
 					canvas.height = window.innerHeight;
-					// console.log('resize: canvas ' + canvas.width + ',' + canvas.height);
-					// console.log('resize: canvas ' + window.innerWidth + ',' + window.innerHeight);
 					timer = null;
 				}, 200);
 			});
@@ -92,14 +90,22 @@ document.addEventListener('DOMContentLoaded', function() {
 		};
 
 		// サークルを移動させる
+		var preTick = null;
 		var move = function() {
 			var canvasWidth = canvas.width;
 			var canvasHeight = canvas.height;
+
+			var tick = Date.now();
+			if (preTick == null) {
+				preTick = tick;
+			}
+
 			for (var i = 0; i < circles.length; i++) {
 				var c = circles[i];
 				// 移動
-				var moveX = c.speed * Math.cos(c.angle);
-				var moveY = c.speed * Math.sin(c.angle);
+				var d = c.speed * (tick - preTick);
+				var moveX = d * Math.cos(c.angle);
+				var moveY = d * Math.sin(c.angle);
 				c.x += moveX;
 				c.y += moveY;
 				if (c.x <= 0 || canvasWidth <= c.x) {
@@ -113,6 +119,8 @@ document.addEventListener('DOMContentLoaded', function() {
 					c.y = c.y <= 0 ? 0 : canvasHeight;
 				}
 			}
+
+			preTick = tick;
 		};
 
 		// タイマー開始
