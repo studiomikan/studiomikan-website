@@ -111,7 +111,7 @@ h2 {
 }
 .menu-nav {
 	/* same .vcenter */
-	position: relative;
+	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
 }
