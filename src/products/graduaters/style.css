@@ -1,4 +1,4 @@
-@charset "Shift_JIS";
+@charset "UTF-8";
 
 body
 {
@@ -7,7 +7,7 @@ body
 	margin: 0px 0px 0px 0px;
 	text-align: left;
 	font-size: 14px;
-/*	font-family: "ƒƒCƒŠƒI","‚l‚r ‚oƒSƒVƒbƒN",sans-serif; */
+/*	font-family: "ãƒ¡ã‚¤ãƒªã‚ª","ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯",sans-serif; */
 	font-family: sans-serif;
 	line-height: 130%;
 	color: #ffffff;
@@ -35,14 +35,14 @@ div.clear
 	clear: left;
 }
 
-/* ‘S‘Ì */
+/* å…¨ä½“ */
 div.divBody
 {
 	width: 800px;
 	text-align: left;
 }
 
-/* ƒƒCƒ“ */
+/* ãƒ¡ã‚¤ãƒ³ */
 div#mainBox
 {
 	width: 800px;
@@ -52,7 +52,7 @@ div#mainBox
 	overflow: hidden;
 }
 
-/* ƒgƒbƒv‰æ‘œ */
+/* ãƒˆãƒƒãƒ—ç”»åƒ */
 div#mainBox #siteTop
 {
 	width: 800px;
@@ -72,7 +72,7 @@ div#siteTopDownload
 	position: absolute;
 }
 
-/* XV—š—ğ */
+/* æ›´æ–°å±¥æ­´ */
 div#whatsNew
 {
 	width: 270px;
@@ -90,7 +90,7 @@ div#whatsNew td
 	vertical-align: top;
 }
 
-/* ƒXƒg[ƒŠ[ */
+/* ã‚¹ãƒˆãƒ¼ãƒªãƒ¼ */
 div #mainBox #storyImage
 {
 	width: 800px;
@@ -99,7 +99,7 @@ div #mainBox #storyImage
 	background-repeat: no-repeat;
 }
 
-/* ƒLƒƒƒ‰ƒNƒ^[ */
+/* ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ */
 div #mainBox #charImage
 {
 	width: 800px;
@@ -190,7 +190,7 @@ div #mainBox #kenjiImage
 	background-repeat: no-repeat;
 }
 
-/* ƒXƒNƒŠ[ƒ“ƒVƒ‡ƒbƒg */
+/* ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã‚·ãƒ§ãƒƒãƒˆ */
 div #mainBox .scshotBox
 {
 	width: 302px;
@@ -200,7 +200,7 @@ div #mainBox .scshotBox
 	border: solid 1px #ffffff;
 }
 
-/* ƒXƒyƒbƒN */
+/* ã‚¹ãƒšãƒƒã‚¯ */
 div #mainBox #specBox
 {
 	width: 650px;
@@ -225,7 +225,7 @@ div #mainBox .specTable td
 	text-align: center;
 }
 
-/* ƒ_ƒEƒ“ƒ[ƒh */
+/* ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰ */
 div #mainBox #downlaodBox
 {
 	width: 800px;
@@ -234,7 +234,7 @@ div #mainBox #downlaodBox
 	text-align: center;
 }
 
-/* ƒƒjƒ…[ */
+/* ãƒ¡ãƒ‹ãƒ¥ãƒ¼ */
 div#menuBox
 {
 	width: 800px;
@@ -256,7 +256,7 @@ div#menuBox a
 	height: 68px;
 }
 
-/* ƒƒjƒ…[ƒo[ */
+/* ãƒ¡ãƒ‹ãƒ¥ãƒ¼ãƒãƒ¼ */
 #m_toppage a:link		{ width: 75px;	background: url("image/button.gif") -46px 0px no-repeat; }
 #m_toppage a:visited	{ width: 75px;	background: url("image/button.gif") -46px 0px no-repeat; }
 #m_toppage a:hover		{ width: 75px;	background: url("image/button.gif") -46px -68px no-repeat; }
@@ -295,7 +295,7 @@ div#menuBox a
 
 
 
-/* ƒtƒbƒ^ */
+/* ãƒ•ãƒƒã‚¿ */
 div#footer
 {
 	text-align: left;
@@ -307,11 +307,11 @@ div#footer
 	color: #919191;
 }
 
-/* ƒRƒs[ƒ‰ƒCƒg */
+/* ã‚³ãƒ”ãƒ¼ãƒ©ã‚¤ãƒˆ */
 #copyright
 {
 	font-size: 12px;
-	font-family: "‚l‚r ‚oƒSƒVƒbƒN",sans-serif;
+	font-family: "ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯",sans-serif;
 	color: #919191;
 	vertical-align: top;
 }
