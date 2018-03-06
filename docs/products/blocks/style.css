@@ -1,0 +1,141 @@
+@charset "Shift_JIS";
+
+body
+{
+	background: #ace1fa;
+	position: relative;
+	margin: 0px 0px 0px 0px;
+	padding: 0 0 0 0;
+	text-align: left;
+	font-size: 14px;
+	font-family: "ÉÅÉCÉäÉI",sans-serif;
+	line-height: 150%;
+	color: #000000;
+}
+
+a
+{
+	outline: none;
+}
+
+img
+{
+	border: none;
+}
+
+.bold
+{
+	font-weight: bold;
+}
+
+/* ëSëÃ */
+div.divBody
+{
+	margin: 0px 0px 0px 0px;
+	padding: 0 0 0 0;
+	text-align: left;
+	background-color: #ace1fa;
+	background-image: url("image/back.jpg");
+	background-repeat: no-repeat;
+	background-position: top left;
+	width: 800px;
+}
+
+img.topicTitle
+{
+	margin: 0 0 0 18px;	
+}
+
+div.topic
+{
+	margin: 0 20px 0 50px;
+	padding: 0 0 50px 0;
+}
+
+table.linkTable
+{
+	border-spacing: 10px;
+}
+
+
+table.linkTable td.b
+{
+	width: 220px;
+}
+
+table.linkTable tr
+{
+	width: 500px;
+}
+
+div#whatsNew
+{
+	width: 250px;
+	height: 70px;
+	border: solid 1px #323232;
+	background-color: #ffffff;
+	margin-top: 20px;
+	margin-left: 530px;
+	position: absolute;
+	overflow: auto;
+	font-size: 12px;
+}
+
+div#whatsNew table
+{
+	border-spacing: 5px;
+}
+
+div#whatsNew td
+{
+	vertical-align: top;
+}
+
+div.copyright
+{
+	border-top: solid 1px #818181;
+	line-height: 120%;
+	font-size: 10px;
+	text-align: right;
+	color: #646464;
+	margin: 0 20px 0 20px;
+	padding: 5px 0 5px 0;
+}
+
+table.softInfo
+{
+	width: 450px;
+	border: solid 1px #202020;
+	border-collapse: collapse;
+}
+table.softInfo tr
+{
+	text-align: center;
+}
+
+table.softInfo td
+{
+	border: solid 1px #202020;
+}
+
+table.softInfo td.item
+{
+	width: 200px;
+	border: solid 1px #202020;
+}
+
+div #mainBox .specTable
+{
+	width: 500px;
+	margin: 0 0 60px 0;
+	border: solid 1px #eeeeee;
+	border-collapse: collapse;
+}
+
+div #mainBox .specTable td
+{
+	padding: 2px 10px 2px 10px;
+	border: solid 1px #eeeeee;
+	text-align: center;
+}
+
