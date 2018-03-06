@@ -1,4 +1,4 @@
-@charset "Shift_JIS";
+@charset "UTF-8";
 
 body
 {
@@ -8,7 +8,7 @@ body
 	padding: 0 0 0 0;
 	text-align: left;
 	font-size: 14px;
-	font-family: "ƒƒCƒŠƒI",sans-serif;
+	font-family: "ãƒ¡ã‚¤ãƒªã‚ª",sans-serif;
 	line-height: 150%;
 	color: #000000;
 }
@@ -28,7 +28,7 @@ img
 	font-weight: bold;
 }
 
-/* ‘S‘Ì */
+/* å…¨ä½“ */
 div.divBody
 {
 	margin: 0px 0px 0px 0px;
