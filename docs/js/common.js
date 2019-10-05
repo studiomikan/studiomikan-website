@@ -1,158 +1,61 @@
-// common.js
-document.addEventListener('DOMContentLoaded', function() {
-	// スクロール
-	(function() {
-		smoothScroll.init({
-			updateURL: false,
-			easing: 'easeInOutQuad',
-			offset: 40
-		});
-	})();
-
-	// start 背景アニメ
-	(function() {
-		// 設定
-		var color = 'rgba(255, 170, 1, 0.3)';
-		var minSize = 30;
-		var maxSize = 100;
-		var minSpeed = 0.02;
-		var maxSpeed = 0.05;
-		var circleNum = 15;
-		// 速さ × 時間 ＝ 距離
-
-		// フィールド
-		var canvas = null;
-		var context = null;
-		var circles = [];
-
-		// 初期化
-		var init = function() {
-			canvas = document.getElementById('back-anim-canvas');
-			canvas.width = window.innerWidth;
-			canvas.height = window.innerHeight;
-			context = canvas.getContext('2d');
-			// ウィンドウのサイズによって丸の量を変える
-			var w = window.innerWidth;
-			if (w > 1920) {
-				circleNum = 20;
-			} else if (w > 1600) {
-				circleNum = 15;
-			} else if (w > 1024) {
-				circleNum = 10;
-			} else {
-				circleNum = 7;
-			}
-		};
-
-		// サークル情報を生成
-		var createCircles = function() {
-			for (var i = 0; i < circleNum; i++) {
-				var c = {
-					//x: canvas.width / 2,
-					x: 125,
-					y: canvas.height / 2 - 75,
-					size: minSize + (maxSize - minSize) * Math.random(),
-					angle: Math.PI * 2 * Math.random(),
-					speed: minSpeed + (maxSpeed - minSpeed) * Math.random()
-				};
-				circles.push(c);
-			}
-		};
-
-		// リサイズ時の動作の初期化
-		var initOnResize = function() {
-			var timer = null;
-			window.addEventListener('resize', function() {
-				if (timer === null) {
-					window.clearTimeout(timer);
-				}
-				timer = window.setTimeout(function() {
-					canvas.width = window.innerWidth;
-					canvas.height = window.innerHeight;
-					timer = null;
-				}, 200);
-			});
-		};
-
-		// 描画する
-		var draw = function() {
-			// クリア
-			context.beginPath();
-			context.clearRect(0, 0, canvas.width, canvas.height);
-			context.closePath();
-			for (var i = 0; i < circles.length; i++) {
-				var c = circles[i];
-				context.beginPath();
-				context.fillStyle = color;
-				context.arc(c.x, c.y, c.size, 0, Math.PI*2, false);
-				context.fill();
-				context.closePath();
-			}
-		};
-
-		// サークルを移動させる
-		var preTick = null;
-		var move = function() {
-			var canvasWidth = canvas.width;
-			var canvasHeight = canvas.height;
-
-			var tick = Date.now();
-			if (preTick == null) {
-				preTick = tick;
-			}
-
-			for (var i = 0; i < circles.length; i++) {
-				var c = circles[i];
-				// 移動
-				var d = c.speed * (tick - preTick);
-				var moveX = d * Math.cos(c.angle);
-				var moveY = d * Math.sin(c.angle);
-				c.x += moveX;
-				c.y += moveY;
-				if (c.x <= 0 || canvasWidth <= c.x) {
-					// 跳ね返り
-					c.angle = Math.atan2(moveY, -moveX);
-					c.x = c.x <= 0 ? 0 : canvasWidth;
-				}
-				if (c.y <= 0 || canvasHeight <= c.y) {
-					// 跳ね返り
-					c.angle = Math.atan2(-moveY, moveX);
-					c.y = c.y <= 0 ? 0 : canvasHeight;
-				}
-			}
-
-			preTick = tick;
-		};
-
-		// タイマー開始
-		var startTimer = function() {
-			var requestAnimationFrame = 
-				window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-				window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-			var requestFrame = function(loopFunc) {
-				if (requestAnimationFrame) {
-					requestAnimationFrame(loopFunc);
-				} else {
-					window.setTimeout(loopFunc, 33);
-				}
-			};
-			var loopFunc = function() {
-				try {
-					move();
-					draw();
-				} catch (e) {
-					console.log(e);
-				}
-				requestFrame(loopFunc);
-			};
-			requestFrame(loopFunc);
-		};
-
-		init();
-		createCircles();
-		initOnResize();
-		startTimer();
-	})();
-	// end 背景アニメ
+// スムーズスクロール
+smoothScroll.init({ updateURL: false, easing: "easeInOutQuad", offset: 0 });
+// 左のナビゲーション
+let sectionList = document.querySelectorAll("[data-paging-section]");
+let navList = document.querySelectorAll("[data-paging-nav]");
+function updatePagingIndicator() {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  let current = sectionList[sectionList.length - 1];
+  let length = sectionList.length;
+  let marginHeight = window.innerHeight / 2;
+  for (let i = sectionList.length - 1; i >= 0; i--) {
+    let sec = sectionList[i];
+    if (sec.offsetTop + marginHeight < scrollTop) break;
+    else current = sec;
+  }
+  navList.forEach(function(nav) {
+    if (nav.getAttribute("href") == "#" + current.id) {
+      nav.setAttribute("data-paging-current", "");
+    } else {
+      nav.removeAttribute("data-paging-current");
+    }
+  });
+}
+updatePagingIndicator();
+document.addEventListener("scroll", function(e) {
+  updatePagingIndicator();
 });
-
+// 右上メニュー＆フルスクリーンナビ
+let menuIcon = document.querySelector('#menu_icon');
+let fullNav = document.querySelector('#full_nav');
+let fullNavLinks = document.querySelectorAll('#full_nav a');
+function showFullNav() {
+	menuIcon.className = "active";
+	fullNav.className = "active";
+}
+function hideFullNav() {
+	menuIcon.className = "";
+	fullNav.className = "fadeout";
+	// transitionendが発行されないときの保険
+	// setTimeout(function() {
+	// 	if (fullNav.className === "fadeout") { fullNav.className = ""; }
+	// }, 510);
+}
+fullNav.addEventListener("transitionend", function(e) {
+	let target = e.target;
+	if (e.target.id === "full_nav" && e.target.className === "fadeout") {
+		fullNav.className = "";
+	}
+});
+menuIcon.addEventListener("click", function(e) {
+	if (menuIcon.className === "active") {
+		hideFullNav();
+	} else {
+		showFullNav();
+	}
+});
+fullNavLinks.forEach(function(link) {
+	link.addEventListener("click", function(e) {
+		hideFullNav();
+	});
+});
