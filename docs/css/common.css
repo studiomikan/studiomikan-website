@@ -116,8 +116,8 @@ a {
       border-top: solid 2px #ffaa01;
       background: rgba(255, 255, 255, 0);
       transition: 300ms; }
-      a.underline:before:hover, a.underline:after:hover {
-        width: 50%; }
+    a.underline.current:before, a.underline.current:after, a.underline:hover:before, a.underline:hover:after {
+      width: 50%; }
     a.underline:before {
       left: 50%; }
     a.underline:after {
@@ -344,6 +344,59 @@ header {
     #left_nav a.nav4 {
       animation-delay: 400ms; }
 
+#left_nav_simple {
+  display: none;
+  z-index: 400;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 20px;
+  transform: translateY(-50%);
+  text-align: right;
+  line-height: 2.5em;
+  margin: 0 0 0 20px; }
+  @media (max-width: 1024px) {
+    #left_nav_simple {
+      display: block; } }
+  @media (max-width: 480px) {
+    #left_nav_simple {
+      display: none; } }
+  #left_nav_simple a {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    animation-name: slidein-from-left;
+    animation-duration: 800ms;
+    animation-fill-mode: both; }
+    #left_nav_simple a.nav1 {
+      animation-delay: 100ms; }
+    #left_nav_simple a.nav2 {
+      animation-delay: 200ms; }
+    #left_nav_simple a.nav3 {
+      animation-delay: 300ms; }
+    #left_nav_simple a.nav4 {
+      animation-delay: 400ms; }
+    #left_nav_simple a span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      width: 8px;
+      height: 8px;
+      font-size: 8px;
+      line-height: 8px;
+      background: #ffaa01;
+      border: none;
+      border-radius: 50%;
+      vertical-align: middle; }
+    #left_nav_simple a.current span, #left_nav_simple a:hover span {
+      width: 20px;
+      height: 20px; }
+
 section {
   position: relative;
   width: 100%;
@@ -504,7 +557,7 @@ section {
   max-width: 800px; }
   @media (max-width: 1024px) {
     #members > div {
-      width: 90%; } }
+      width: 85%; } }
 
 #members .member {
   background: rgba(0, 0, 0, 0.05);

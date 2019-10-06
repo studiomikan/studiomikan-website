@@ -171,8 +171,12 @@ a {
       border-top: solid 2px #ffaa01;
       background: rgba(255, 255, 255, 0);
       transition: 300ms;
+    }
 
-      &:hover {
+    &.current,
+    &:hover {
+      &:before,
+      &:after {
         width: 50%;
       }
     }
@@ -219,6 +223,7 @@ header {
     border-bottom: solid 1px #AAAAAA;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
   }
+
   @media (max-width: $sp) {
     height: 60px;
   }
@@ -233,6 +238,7 @@ header {
 
   h1 {
     display: inline-block;
+
     img {
       height: 40px;
     }
@@ -246,6 +252,7 @@ header {
   @media (max-width: $sp) {
     top: 15px;
     left: 15px;
+
     h1 {
       img {
         height: 30px;
@@ -460,20 +467,70 @@ header {
     animation-duration: 800ms;
     animation-fill-mode: both;
 
-    &.nav1 {
-      animation-delay: 100ms;
+    &.nav1 { animation-delay: 100ms; }
+    &.nav2 { animation-delay: 200ms; }
+    &.nav3 { animation-delay: 300ms; }
+    &.nav4 { animation-delay: 400ms; }
+  }
+}
+
+#left_nav_simple {
+  display: none;
+  z-index: 400;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 20px;
+  transform: translateY(-50%);
+  text-align: right;
+  line-height: 2.5em;
+  margin: 0 0 0 20px;
+
+  @media (max-width: $ipadpro) {
+    display: block;
+  }
+  @media (max-width: $sp) {
+    display: none;
+  }
+
+  a {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+
+    animation-name: slidein-from-left;
+    animation-duration: 800ms;
+    animation-fill-mode: both;
+    &.nav1 { animation-delay: 100ms; }
+    &.nav2 { animation-delay: 200ms; }
+    &.nav3 { animation-delay: 300ms; }
+    &.nav4 { animation-delay: 400ms; }
+
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      width: 8px;
+      height: 8px;
+      font-size: 8px;
+      line-height: 8px;
+      background: #ffaa01;
+      border: none;
+      border-radius: 50%;
+      vertical-align: middle;
     }
 
-    &.nav2 {
-      animation-delay: 200ms;
-    }
-
-    &.nav3 {
-      animation-delay: 300ms;
-    }
-
-    &.nav4 {
-      animation-delay: 400ms;
+    &.current,
+    &:hover {
+      span {
+        width: 20px;
+        height: 20px;
+      }
     }
   }
 }
@@ -699,7 +756,7 @@ section {
     max-width: 800px;
 
     @media (max-width: $ipadpro) {
-      width: 90%;
+      width: 85%;
     }
   }
 
@@ -726,6 +783,7 @@ section {
       border-radius: 75px;
       margin-right: 40px;
       border: solid 1px #AAAAAA;
+
       @media (max-width: $ipad) {
         margin-right: 0;
       }
@@ -784,6 +842,7 @@ section {
 
       .tags {
         font-size: 13px;
+
         .tag {
           white-space: nowrap;
         }

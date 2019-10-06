@@ -4,15 +4,14 @@ smoothScroll.init({ updateURL: false, easing: "easeInOutQuad", offset: 0 });
 function addClass(elm, className) {
   let classList = elm.className.split(" ");
   if (classList.indexOf(className) >= 0) return;
-  elm.className += className;
+  elm.className += (" " + className);
 }
 function removeClass(elm, className) {
   let name = "";
   elm.className.split(" ").forEach(function (c) {
-    if (c !== className) name += c;
+    if (c !== className) name += c + " ";
   });
-  console.log(className, elm.className, name);
-  elm.className = name;
+  elm.className = name.trim();
 }
 function hasClass(elm, className) {
   return elm.className.split(" ").indexOf(className) >= 0;
@@ -27,15 +26,17 @@ function updatePagingIndicator() {
       marginHeight = window.innerHeight / 2;
   for (let i = sectionList.length - 1; i >= 0; i--) {
     let sec = sectionList[i];
-    if (sec.offsetTop + marginHeight < scrollTop) break;
-    else current = sec;
+    if (sec.offsetTop < scrollTop + marginHeight ) {
+      current = sec;
+      break;
+    }
   }
   for (let i = 0; i < navList.length; i++) {
     let nav = navList[i];
     if (nav.getAttribute("href") == "#" + current.id) {
-      nav.setAttribute("data-paging-current", "");
+      addClass(nav, "current");
     } else {
-      nav.removeAttribute("data-paging-current");
+      removeClass(nav, "current");
     }
   }
 }
