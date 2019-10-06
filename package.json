@@ -1,0 +1,31 @@
+{
+  "name": "studiomikan-website",
+  "version": "1.0.0",
+  "description": "スタジオ蜜柑 (https://studiomikan.net/ ) のソースコード",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/okayumoka/studiomikan-website.git"
+  },
+  "keywords": [
+    "website",
+    "sass",
+    "javascript"
+  ],
+  "author": "okayu <studiomikan@gmail.com> (https://studiomikan.net/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/okayumoka/studiomikan-website/issues"
+  },
+  "homepage": "https://studiomikan.net/",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2"
+  }
+}
