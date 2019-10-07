@@ -312,9 +312,20 @@ header {
 #copyright {
   z-index: 300;
   position: fixed;
-  right: 50px;
-  bottom: 30px;
-  font-size: 14px; }
+  right: 40px;
+  bottom: 25px;
+  font-size: 14px;
+  transition: 0ms; }
+  @media (max-width: 1024px) {
+    #copyright {
+      position: relative;
+      text-align: center;
+      width: 100%;
+      height: 40px;
+      margin: -40px 0 0 0;
+      right: 0;
+      bottom: 0;
+      transition: 0ms; } }
 
 #left_nav {
   z-index: 400;
