@@ -1,158 +1,178 @@
-// common.js
-document.addEventListener('DOMContentLoaded', function() {
-	// スクロール
-	(function() {
-		smoothScroll.init({
-			updateURL: false,
-			easing: 'easeInOutQuad',
-			offset: 40
-		});
-	})();
-
-	// start 背景アニメ
-	(function() {
-		// 設定
-		var color = 'rgba(255, 170, 1, 0.3)';
-		var minSize = 30;
-		var maxSize = 100;
-		var minSpeed = 0.02;
-		var maxSpeed = 0.05;
-		var circleNum = 15;
-		// 速さ × 時間 ＝ 距離
-
-		// フィールド
-		var canvas = null;
-		var context = null;
-		var circles = [];
-
-		// 初期化
-		var init = function() {
-			canvas = document.getElementById('back-anim-canvas');
-			canvas.width = window.innerWidth;
-			canvas.height = window.innerHeight;
-			context = canvas.getContext('2d');
-			// ウィンドウのサイズによって丸の量を変える
-			var w = window.innerWidth;
-			if (w > 1920) {
-				circleNum = 20;
-			} else if (w > 1600) {
-				circleNum = 15;
-			} else if (w > 1024) {
-				circleNum = 10;
-			} else {
-				circleNum = 7;
-			}
-		};
-
-		// サークル情報を生成
-		var createCircles = function() {
-			for (var i = 0; i < circleNum; i++) {
-				var c = {
-					//x: canvas.width / 2,
-					x: 125,
-					y: canvas.height / 2 - 75,
-					size: minSize + (maxSize - minSize) * Math.random(),
-					angle: Math.PI * 2 * Math.random(),
-					speed: minSpeed + (maxSpeed - minSpeed) * Math.random()
-				};
-				circles.push(c);
-			}
-		};
-
-		// リサイズ時の動作の初期化
-		var initOnResize = function() {
-			var timer = null;
-			window.addEventListener('resize', function() {
-				if (timer === null) {
-					window.clearTimeout(timer);
-				}
-				timer = window.setTimeout(function() {
-					canvas.width = window.innerWidth;
-					canvas.height = window.innerHeight;
-					timer = null;
-				}, 200);
-			});
-		};
-
-		// 描画する
-		var draw = function() {
-			// クリア
-			context.beginPath();
-			context.clearRect(0, 0, canvas.width, canvas.height);
-			context.closePath();
-			for (var i = 0; i < circles.length; i++) {
-				var c = circles[i];
-				context.beginPath();
-				context.fillStyle = color;
-				context.arc(c.x, c.y, c.size, 0, Math.PI*2, false);
-				context.fill();
-				context.closePath();
-			}
-		};
-
-		// サークルを移動させる
-		var preTick = null;
-		var move = function() {
-			var canvasWidth = canvas.width;
-			var canvasHeight = canvas.height;
-
-			var tick = Date.now();
-			if (preTick == null) {
-				preTick = tick;
-			}
-
-			for (var i = 0; i < circles.length; i++) {
-				var c = circles[i];
-				// 移動
-				var d = c.speed * (tick - preTick);
-				var moveX = d * Math.cos(c.angle);
-				var moveY = d * Math.sin(c.angle);
-				c.x += moveX;
-				c.y += moveY;
-				if (c.x <= 0 || canvasWidth <= c.x) {
-					// 跳ね返り
-					c.angle = Math.atan2(moveY, -moveX);
-					c.x = c.x <= 0 ? 0 : canvasWidth;
-				}
-				if (c.y <= 0 || canvasHeight <= c.y) {
-					// 跳ね返り
-					c.angle = Math.atan2(-moveY, moveX);
-					c.y = c.y <= 0 ? 0 : canvasHeight;
-				}
-			}
-
-			preTick = tick;
-		};
-
-		// タイマー開始
-		var startTimer = function() {
-			var requestAnimationFrame = 
-				window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-				window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-			var requestFrame = function(loopFunc) {
-				if (requestAnimationFrame) {
-					requestAnimationFrame(loopFunc);
-				} else {
-					window.setTimeout(loopFunc, 33);
-				}
-			};
-			var loopFunc = function() {
-				try {
-					move();
-					draw();
-				} catch (e) {
-					console.log(e);
-				}
-				requestFrame(loopFunc);
-			};
-			requestFrame(loopFunc);
-		};
-
-		init();
-		createCircles();
-		initOnResize();
-		startTimer();
-	})();
-	// end 背景アニメ
+// scroll
+smoothScroll.init({ updateURL: false, easing: "easeInOutQuad", offset: 0 });
+// utils
+function addClass(elm, className) {
+  let classList = elm.className.split(" ");
+  if (classList.indexOf(className) >= 0) return;
+  elm.className += (" " + className);
+}
+function removeClass(elm, className) {
+  let name = "";
+  elm.className.split(" ").forEach(function (c) {
+    if (c !== className) name += c + " ";
+  });
+  elm.className = name.trim();
+}
+function hasClass(elm, className) {
+  return elm.className.split(" ").indexOf(className) >= 0;
+}
+// 左のナビ
+let sectionList = document.querySelectorAll("[data-paging-section]"),
+    navList = document.querySelectorAll("[data-paging-nav]");
+function updatePagingIndicator() {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop,
+      current = sectionList[sectionList.length - 1],
+      length = sectionList.length,
+      marginHeight = window.innerHeight / 2;
+  for (let i = sectionList.length - 1; i >= 0; i--) {
+    let sec = sectionList[i];
+    if (sec.offsetTop < scrollTop + marginHeight ) {
+      current = sec;
+      break;
+    }
+  }
+  for (let i = 0; i < navList.length; i++) {
+    let nav = navList[i];
+    if (nav.getAttribute("href") == "#" + current.id) {
+      addClass(nav, "current");
+    } else {
+      removeClass(nav, "current");
+    }
+  }
+}
+updatePagingIndicator();
+document.addEventListener("scroll", function (e) {
+  updatePagingIndicator();
 });
+// 右上メニュー＆フルスクリーンナビ
+let menuIcon = document.querySelector('#menu_icon'),
+    fullNav = document.querySelector('#full_nav'),
+    fullNavLinks = document.querySelectorAll('#full_nav a');
+function showFullNav() {
+  addClass(menuIcon, "active");
+  addClass(fullNav, "active");
+}
+function hideFullNav() {
+  removeClass(menuIcon, "active");
+  removeClass(fullNav, "active");
+  addClass(fullNav, "fadeout");
+}
+fullNav.addEventListener("transitionend", function (e) {
+  if (e.target.id === "full_nav" && hasClass(e.target, "fadeout")) {
+    removeClass(fullNav, "fadeout");
+  }
+});
+menuIcon.addEventListener("click", function (e) {
+  if (hasClass(menuIcon, "active")) {
+    hideFullNav();
+  } else {
+    showFullNav();
+  }
+});
+for (let i = 0; i < fullNavLinks.length; i++) {
+  let link = fullNavLinks[i];
+  link.addEventListener("click", function (e) {
+    hideFullNav();
+  });
+}
+// 背景アニメーション
+(function () {
+  let area = document.querySelector("#background"),
+      color = 'rgba(255, 170, 1, 0.1)',
+      minSize = 50,
+      maxSize = 200,
+      minSpeed = 0.02,
+      maxSpeed = 0.06,
+      circleNum = 15,
+      circles = [];
+      startX = 200,
+      startY = 200;
+  function createCircles() {
+    for (let i = 0; i < circleNum; i++) {
+      let size = minSize + ((maxSize - minSize) / circleNum) * i,
+          angle = Math.PI * 2 * Math.random(),
+          speed = minSpeed + (maxSpeed - minSpeed) * Math.random(),
+          div = createCircleDiv(size);
+      area.appendChild(div);
+      circles.push({
+        size: size,
+        angle: angle,
+        speed: speed,
+        x: startX,
+        y: startY,
+        div: div
+      });
+    }
+  }
+  function createCircleDiv(size) {
+    let div = document.createElement("div");
+    div.style.width = size + "px";
+    div.style.height = size + "px";
+    div.style.border = "none";
+    div.style.borderRadius = Math.ceil(size / 2) + "px";
+    div.style.background = color;
+    div.style.position = "absolute";
+    div.style.top = (startY - size / 2) + "px";
+    div.style.left = (startX - size / 2) + "px";
+    return div;
+  }
+  function start() {
+    let requestAnimationFrame =
+      window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+      window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+    let requestFrame = function (loopFunc) {
+      if (requestAnimationFrame) {
+        requestAnimationFrame(loopFunc);
+      } else {
+        window.setTimeout(loopFunc, 33);
+      }
+    };
+    let loopFunc = function () {
+      move();
+      requestFrame(loopFunc);
+    };
+    requestFrame(loopFunc);
+  }
+  let preTick = null;
+  function move() {
+    let areaWidth = area.offsetWidth,
+        areaHeight = area.offsetHeight,
+        tick = Date.now();
+    if (preTick == null) preTick = tick;
+    for (let i = 0; i < circles.length; i++) {
+      let c = circles[i];
+      // 移動
+      let d = c.speed * (tick - preTick),
+          moveX = d * Math.cos(c.angle),
+          moveY = d * Math.sin(c.angle);
+      c.x += moveX;
+      c.y += moveY;
+      // 跳ね返り
+      if (c.x <= 0 || areaWidth <= c.x) {
+        c.angle = Math.atan2(moveY, -moveX);
+        c.x = c.x <= 0 ? 0 : areaWidth;
+      }
+      if (c.y <= 0 || areaHeight <= c.y) {
+        c.angle = Math.atan2(-moveY, moveX);
+        c.y = c.y <= 0 ? 0 : areaHeight;
+      }
 
+      c.div.style.left = (c.x - c.size / 2) + "px";
+      c.div.style.top = (c.y - c.size / 2) + "px";
+    }
+    preTick = tick;
+  }
+  function init() {
+    let w = area.offsetWidth;
+    if (w > 1920) circleNum = 25;
+    else if (w > 1600) circleNum = 20;
+    else if (w > 1024) circleNum = 15;
+    else circleNum = 10;
+    startX = area.offsetWidth / 2;
+    startY = area.offsetHeight / 2;
+    preTick = Date.now() - 2500;
+    createCircles();
+    start();
+  }
+  init();
+})();

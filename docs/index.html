@@ -1,190 +1,319 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<title>スタジオ蜜柑</title>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23869769-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-23869769-1');
+  </script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>スタジオ蜜柑</title>
+  <!-- favicons -->
+  <link rel="shortcut icon" href="./favicons/favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="icon" href="./favicons/favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="./favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="./favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="./favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="./favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="./favicons/favicon-48x48.png" sizes="48x48">
+  <link rel="icon" type="image/png" href="./favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="./favicons/favicon-160x160.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="./favicons/favicon-196x196.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="./favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="./favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="manifest" href="./favicons/manifest.json">
+  <meta name="msapplication-TileColor" content="#eeeeee">
+  <meta name="msapplication-TileImage" content="./favicons/mstile-144x144.png">
 
-		<!-- favicons -->
-		<link rel="shortcut icon" href="./favicons/favicon.ico" type="image/vnd.microsoft.icon">
-		<link rel="icon" href="./favicons/favicon.ico" type="image/vnd.microsoft.icon">
-		<link rel="apple-touch-icon" sizes="57x57" href="./favicons/apple-touch-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="./favicons/apple-touch-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="./favicons/apple-touch-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="./favicons/apple-touch-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="./favicons/apple-touch-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="./favicons/apple-touch-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="./favicons/apple-touch-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="./favicons/apple-touch-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon-180x180.png">
-		<link rel="icon" type="image/png" href="./favicons/android-chrome-192x192.png" sizes="192x192">
-		<link rel="icon" type="image/png" href="./favicons/favicon-48x48.png" sizes="48x48">
-		<link rel="icon" type="image/png" href="./favicons/favicon-96x96.png" sizes="96x96">
-		<link rel="icon" type="image/png" href="./favicons/favicon-160x160.png" sizes="96x96">
-		<link rel="icon" type="image/png" href="./favicons/favicon-196x196.png" sizes="96x96">
-		<link rel="icon" type="image/png" href="./favicons/favicon-16x16.png" sizes="16x16">
-		<link rel="icon" type="image/png" href="./favicons/favicon-32x32.png" sizes="32x32">
-		<link rel="manifest" href="./favicons/manifest.json">
-		<meta name="msapplication-TileColor" content="#eeeeee">
-		<meta name="msapplication-TileImage" content="./favicons/mstile-144x144.png">
+  <!-- lib -->
+  <link rel="stylesheet" type="text/css" href="./lib/animate.min.css">
 
-		<!-- lib -->
-		<link rel="stylesheet" type="text/css" href="./lib/animate.min.css">
-		<script type="text/javascript" src="./lib/smooth-scroll.min.js"></script>
+  <!-- font -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:200,400">
+  <!-- <link rel="stylesheet" type="text/css"
+    href="https://cdn.materialdesignicons.com/4.4.95/css/materialdesignicons.min.css"> -->
 
-		<!-- font -->
-		<!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/mplus1p.css"> -->
-		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css">
-		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:200,400">
-		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Nixie+One">
-		<!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Carter+One"> -->
+  <!-- style -->
+  <link rel="stylesheet" type="text/css" href="./css/reset.css" media="all">
+  <link rel="stylesheet" type="text/css" href="./css/common.css" media="all">
+  <!-- <script type="text/javascript" src="./js/common.js"></script> -->
+</head>
 
-		<!-- style -->
-		<link rel="stylesheet" type="text/css" href="./css/reset.css" media="all">
-		<link rel="stylesheet" type="text/css" href="./css/common.css" media="all">
-		<script type="text/javascript" src="./js/common.js"></script>
-	</head>
-	<body>
+<body>
 
-		<!-- background animation -->
-		<canvas id="back-anim-canvas"></canvas>
+  <!-- background anim -->
+  <div id="background"></div>
 
-		<!-- foreground contents start -->
-		<div id="foreground-body">
+  <header>
+  </header>
 
-			<!-- menu -->
-			<article class="menu-block">
-				<nav class="menu-nav">
-					<h1>
-						<img src="./img/logo.png" width="210" alt="スタジオ蜜柑">
-					</h1>
-					<ul class="menu">
-						<li><a class="underline" href="#home" data-scroll>Home</a></li>
-						<li><a class="underline" href="#about" data-scroll>About</a></li>
-						<li><a class="underline" href="#products" data-scroll>Products</a></li>
-						<li><a class="underline" href="#member" data-scroll>Member</a></li>
-						<li><a class="underline" href="#contact" data-scroll>Contact</a></li>
-					</ul>
-				</nav>
-			</article>
+  <!-- logo -->
+  <nav id="logo">
+    <h1>
+      <a href="#about" data-scroll>
+        <img src="./img/logo.png" height="40" alt="スタジオ蜜柑">
+      </a>
+    </h1>
+    <div id="debug"></div>
+  </nav>
 
-			<!-- Home: -->
-			<article id="home" class="content words">
-				<!-- We don’t stop playing because we grow old;<br> -->
-				We grow old because we stop playing.
-			</article>
+  <!-- links menu -->
+  <nav id="links">
+    <a href="https://twitter.com/studiomikan">
+      <svg width="35" height="35" viewBox="0 0 24 24" fill="#444444">
+        <path d="M17.707 9.328C18.187 8.928 18.747 8.451 18.999 7.921C18.589 8.125 18.104 8.258 17.56 8.332C18.058 7.967 18.466 7.514 18.676 6.863C18.163 7.135 17.631 7.383 16.974 7.51C15.424 5.63 11.712 7.148 12.366 9.945C9.759 9.785 8.17 8.605 6.849 7.156C6.096 8.381 6.751 10.23 7.642 10.736C7.182 10.709 6.833 10.566 6.498 10.414C6.544 11.954 7.393 12.687 8.581 13.086C8.20503 13.1686 7.81678 13.1788 7.437 13.116C7.805 14.193 8.583 14.863 9.901 14.992C9.008 15.756 7.343 16.293 5.999 16.078C7.145 16.808 8.464 17.392 10.282 17.31C14.69 17.111 17.643 13.947 17.707 9.328V9.328ZM12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2Z" fill="black"></path>
+      </svg>
+    </a><!--
+    --><a href="https://github.com/okayumoka/studiomikan-website">
+      <svg width="35" height="35" viewBox="0 0 24 24" fill="red">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12C2 16.418 4.865 20.166 8.839 21.489C9.339 21.581 9.521 21.272 9.521 21.007C9.521 20.77 9.513 20.141 9.508 19.307C6.726 19.911 6.139 17.966 6.139 17.966C5.685 16.811 5.029 16.503 5.029 16.503C4.121 15.883 5.098 15.895 5.098 15.895C6.101 15.965 6.629 16.925 6.629 16.925C7.521 18.454 8.97 18.012 9.539 17.756C9.631 17.11 9.889 16.67 10.175 16.42C7.955 16.167 5.62 15.31 5.62 11.477C5.62 10.386 6.01 9.493 6.649 8.794C6.546 8.541 6.203 7.524 6.747 6.147C6.747 6.147 7.587 5.879 9.497 7.173C10.3128 6.95068 11.1544 6.83736 12 6.836C12.8459 6.83741 13.6878 6.95073 14.504 7.173C16.413 5.879 17.251 6.147 17.251 6.147C17.797 7.524 17.453 8.541 17.351 8.794C17.991 9.493 18.379 10.386 18.379 11.477C18.379 15.319 16.04 16.164 13.813 16.412C14.172 16.721 14.491 17.331 14.491 18.264C14.491 19.601 14.479 20.679 14.479 21.007C14.479 21.274 14.659 21.585 15.167 21.487C19.137 20.163 22 16.417 22 12.001C22 6.477 17.522 2 12 2Z" fill="black"></path>
+      </svg>
+    </a>
+  </nav>
 
-			<!-- About: -->
-			<article id="about" class="content">
-				<h2>About :</h2>
-				<p>
-					スタジオ蜜柑は、PCゲーム、スマホゲーム、ゲーム開発ツールなどを公開するサークルです。<br>
-					メンバーは一人でのんびり活動しています。
-				</p>
-			</article>
+  <!-- menu -->
+  <a id="menu_icon" href="javascript:void(0)">
+    <div></div>
+    <div></div>
+    <div></div>
+  </a>
 
-			<!-- Products: -->
-			<article id="products" class="content">
-				<h2>Products :</h2>
-				<div class="product-box">
-					<a class="thumb-link" href="https://github.com/okayumoka/Ponkan2">
-						<img class="thumb" src="./img/thumb_ponkan.jpg" width="228" alt="Ponkan">
-					</a>
-					<div class="text">
-						<p class="title">
-							<a href="https://github.com/okayumoka/Ponkan2">Ponkan2</a>
-						</p>
-						<p class="genre">
-							HTML5 Canvas novel game engine
-						</p>
-						<p class="detail">
-							HTML5 + JavaScript で実装された、ブラウザで動作するノベルゲーム用エンジンです。
-						</p>
-						<p class="detail">
-							現在開発中につき、まだまだ動きません。
-						</p>
-					</div>
-				</div>
-				<div class="product-box">
-					<a class="thumb-link" href="./products/graduaters/">
-						<img class="thumb" src="./img/thumb_graduaters.jpg" width="228" alt="グラディエイターズ！">
-					</a>
-					<div class="text">
-						<p class="title">
-							<a href="./products/graduaters/">Graduaters!　～グラディエイターズ！～</a>
-						</p>
-						<p class="genre">
-							ADV (Novel) ｜ Windows, Android
-						</p>
-						<p class="detail">
-							3年間通った学校を卒業したその日、幼なじみの女の子から１通のメールが届く。
-						</p>
-						<p class="detail">
-							「今夜は学校に忍びこむから、<br>
-							　ちゃんと来るように」
-						</p>
-						<p class="detail">
-							俺は久々に夜の学校へと足を向ける。<br>
-							ずっと先送りにしてきた過去から、卒業するために。
-						</p>
-					</div>
-				</div>
-				<div class="product-box">
-					<a class="thumb-link" href="./products/blocks/">
-						<img class="thumb" src="./img/thumb_blocks.jpg" width="228" alt="その日、空から落ちてきたBlocks">
-					</a>
-					<div class="text">
-						<p class="title">
-							<a href="./products/blocks/">その日、空から落ちてきたBlocks</a>
-						</p>
-						<p class="genre">ACT ｜ Windows</p>
-						<p class="detail">
-							空から降り注ぐ、色とりどりのBlocks。
-						</p>
-						<p class="detail">
-							二人のキャラクターを同時に操り、 降り注ぐBlocksから生き延びろ！<br>
-							お手軽ミニアクションゲーム。
-						</p>
-					</div>
-				</div>
-			</article>
+  <!-- fullscreen navigation -->
+  <nav id="full_nav">
+    <div class="graphfont">
+      <a class="nav1" href="#about" data-scroll>About</a><br>
+      <a class="nav2" href="#products" data-scroll>Products</a><br>
+      <a class="nav3" href="#members" data-scroll>Members</a><br>
+      <a class="nav4" href="#contact" data-scroll>Contact</a>
+    </div>
+  </nav>
 
-			<!-- Menber: -->
-			<article id="member" class="content">
-				<h2>Member :</h2>
-				<div class="clear">
-					<img class="okayu" src="./img/okayu.jpg" alt="okayu icon" width="150">
-					<p class="okayu-text">
-						okayu<br>
-						<a href="//twitter.com/__okayu">Twitter</a>
-						<a href="//okayu-moka.hatenablog.com/">Blog</a>
-						<a href="//github.com/okayumoka">GitHub</a>
-					</p>
-				</div>
-			</article>
+  <!-- Left navigation -->
+  <nav id="left_nav" class="graphfont">
+    <a class="nav1 underline" href="#about" data-scroll data-paging-nav>About</a><br>
+    <a class="nav2 underline" href="#products" data-scroll data-paging-nav>Products</a><br>
+    <a class="nav3 underline" href="#members" data-scroll data-paging-nav>Members</a><br>
+    <a class="nav4 underline" href="#contact" data-scroll data-paging-nav>Contact</a>
+  </nav>
 
-			<!-- Contact: -->
-			<article id="contact" class="content">
-				<h2>Contact :</h2>
-				<p>
-					製作物に関する質問・メッセージ・その他のお問い合わせについては、<br>
-					studiomikan★gmail.com（★は@に変換）へメールしていただくか、
-					または <a href="//twitter.com/__okayu">Twitter</a> からご連絡ください。
-				</p>
-			</article>
+  <nav id="left_nav_simple">
+    <a class="nav1" href="#about" data-scroll data-paging-nav><span>.</span></a><br>
+    <a class="nav2" href="#products" data-scroll data-paging-nav><span>.</span></a><br>
+    <a class="nav3" href="#members" data-scroll data-paging-nav><span>.</span></a><br>
+    <a class="nav4" href="#contact" data-scroll data-paging-nav><span>.</span></a>
+  </nav>
 
-			<!-- copyright -->
-			<article class="copyright-block">
-				<span class="copyright">
-					&copy; 2019 Studio Mikan.
-				</span>
-			</article>
+  <section id="about" data-paging-section>
+    <div class="about">
+      <h2 class="logo">
+        <img src="./img/logo.png" alt="スタジオ蜜柑">
+      </h2>
+      <div class="line"></div>
+      <p class="graphfont">
+        PC game / Mobile game / Development tool / Web Design
+      </p>
+    </div>
+  </section>
 
+  <section id="products" data-paging-section>
+    <h2 class="section-title graphfont">Products:</h2>
+    <div>
+      <div class="product left">
+        <a class="thumbnail" href="https://github.com/okayumoka/ponkan3">
+          <img src="./img/thumb_ponkan3.png" alt="Ponkan3">
+        </a>
+        <div class="content">
+          <div class="title">
+            <a href="https://github.com/okayumoka/ponkan3">Ponkan3</a>
+          </div>
+          <div class="summary">
+            Novel game engine
+            <span class="h-line">|</span>
+            <img src="./img/mdi-wrench.svg">
+            <span class="h-line">|</span>
+            <img src="./img/mdi-windows.svg">
+            <img src="./img/mdi-apple.svg">
+            <img src="./img/mdi-linux.svg">
+          </div>
+          <div class="details">
+            <p>
+              Ponkan3は、Webブラウザで動作する<br>
+              ノベルゲーム用エンジンです。
+            </p>
+            <p>
+              WebGLによる高速な描画や、<br>
+              ルール画像によるトランジションが特徴です。<br>
+            </p>
+            <p>
+              ブラウザ動作のため、PC、スマートフォン、タブレット等、<br>
+              様々な環境で動くゲームを作ることができます。
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="product right">
+        <a class="thumbnail" href="./products/graduaters/">
+          <img src="./img/thumb_graduaters.jpg" alt="グラディエイターズ！">
+        </a>
+        <div class="content">
+          <div class="title">
+            <a href="./products/graduaters/">Graduaters!　～グラディエイターズ！～</a>
+          </div>
+          <div class="summary">
+            ADV (Visual Novel)
+            <span class="h-line">|</span>
+            <img src="./img/mdi-gamepad-variant.svg">
+            <span class="h-line">|</span>
+            <img src="./img/mdi-windows.svg">
+            <img src="./img/mdi-android.svg">
+          </div>
+          <div class="details">
+            <p>
+              3年間通った学校を卒業したその日、<br>
+              幼なじみの女の子から１通のメールが届く。
+            </p>
+            <p>
+              「今夜は学校に忍びこむから、<br>
+              ちゃんと来るように！」
+            </p>
+            <p>
+              俺は久々に夜の学校へと足を向ける。<br>
+              ずっと先送りにしてきた過去から、卒業するために。
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="product left">
+        <a class="thumbnail" href="./products/blocks/">
+          <img src="./img/thumb_blocks.jpg" alt="">
+        </a>
+        <div class="content">
+          <div class="title">
+            <a href="./products/blocks/">その日、空から落ちてきたBlocks</a>
+          </div>
+          <div class="summary">
+            ACT
+            <span class="h-line">|</span>
+            <img src="./img/mdi-gamepad-variant.svg">
+            <span class="h-line">|</span>
+            <img src="./img/mdi-windows.svg">
+          </div>
+          <div class="details">
+            <p>
+              空から降り注ぐ、色とりどりの
+              <ruby>
+                <rb>Blocks</rb>
+                <rp>(</rp>
+                <rt>ブロックス</rt>
+                <rp>)</rp>
+              </ruby>。
+            </p>
+            <p>
+              二人のキャラクターを同時に操り、<br>
+              降り注ぐBlocksから生き延びろ！<br>
+            </p>
+            <p>
+              お手軽なミニアクションゲーム。
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="product right">
+        <a class="thumbnail" href="./products/mokalife/">
+          <img src="./img/thumb_mokalife.png" alt="">
+        </a>
+        <div class="content">
+          <div class="title">
+            <a href="./products/blocks/">mokalife</a>
+          </div>
+          <div class="summary">
+            SLG (Game of Life)
+            <span class="h-line">|</span>
+            <img src="./img/mdi-gamepad-variant.svg">
+            <span class="h-line">|</span>
+            <img src="./img/mdi-windows.svg">
+            <img src="./img/mdi-apple.svg">
+            <img src="./img/mdi-linux.svg">
+          </div>
+          <div class="details">
+            <p>
+              ブラウザで動作するライフゲーム。
+            </p>
+            <p>
+              ライフゲームは1970年に、イギリスの数学者<br>
+              ジョン・ホートン・コンウェイが考案した<br>
+              シミュレーションゲームです。
+            </p>
+            <p>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-		</div>
-		<!-- foreground contents end -->
+  <section id="members" data-paging-section>
+    <div>
+      <h2 class="section-title graphfont">Members:</h2>
+      <div class="member">
+        <img class="icon" src="./img/okayu.jpg" alt="おかゆ">
+        <div class="details">
+          <div class="name">okayu</div>
+          <div class="sns">
+            <a class="graphfont" href="https://twitter.com/__okayu"><img src="./img/mdi-twitter.svg">Twitter</a>
+            <a class="graphfont" href="https://github.com/okayumoka"><img src="./img/mdi-github-box.svg">GitHub</a>
+            <a class="graphfont" href=""><img class="hatena" src="./img/hatenablog-logo.svg">Blog</a>
+          </div>
+          <div class="tags graphfont">
+            <span class="tag">Rails </span> /
+            <span class="tag">TypeScript </span> /
+            <span class="tag">WebGL </span> /
+            <span class="tag">Unity </span> /
+            <span class="tag">Vim </span> /
+            <span class="tag">KiriKiri </span> /
+            <span class="tag">Splatoon </span> /
+            <span class="tag">PuyoPuyo </span> /
+            <span class="tag">Street Fighter IV</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	</body>
+  <section id="contact" data-paging-section>
+    <div>
+      <h2 class="section-title graphfont">Contact us:</h2>
+      <div class="contact graphfont">
+        <img src="./img/mdi-email.svg">
+        <a href="mailto:studiomikan@gmail.com">studiomikan@gmail.com</a>
+      </div>
+      <div class="contact graphfont">
+        <img src="./img/mdi-twitter.svg">
+        <a href="https://twitter.com/studiomikan">@studiomikan</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- copyright -->
+  <div id="copyright" class="graphfont">
+    <span>&copy; 2019 Studio Mikan.</span>
+  </div>
+
+  <script type="text/javascript" src="./lib/smooth-scroll.min.js"></script>
+  <script type="text/javascript" src="./js/common.js"></script>
+</body>
+
 </html>
