@@ -1,4 +1,9 @@
 # studiomikan-website
 
-このリポジトリは、スタジオ蜜柑 (https://studiomikan.net/ ) のソースコードです。
-公開用GitHub Pagesリポジトリも兼ねています。
+スタジオ蜜柑 (https://studiomikan.net/ ) のソースコード兼、
+公開用 GitHub Pages リポジトリです。
+
+### Libraries
+
+- Smooth Scroll https://github.com/cferdinandi/smooth-scroll
+- bubbly-bg https://github.com/tipsy/bubbly-bg
