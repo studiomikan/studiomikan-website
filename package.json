@@ -7,25 +7,23 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "gulp"
+    "start": "http-server docs -p 8080",
+    "css": "gulp"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/okayumoka/studiomikan-website.git"
+    "url": "git+https://github.com/studiomikan/studiomikan-website.git"
   },
-  "keywords": [
-    "website",
-    "sass",
-    "javascript"
-  ],
+  "keywords": ["website", "sass", "javascript"],
   "author": "okayu <studiomikan@gmail.com> (https://studiomikan.net/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/okayumoka/studiomikan-website/issues"
+    "url": "https://github.com/studiomikan/studiomikan-website/issues"
   },
   "homepage": "https://studiomikan.net/",
   "devDependencies": {
     "gulp": "^4.0.2",
-    "gulp-sass": "^4.0.2"
+    "gulp-sass": "^4.0.2",
+    "http-server": "^0.12.1"
   }
 }
