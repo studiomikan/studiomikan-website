@@ -8,13 +8,18 @@
   },
   "scripts": {
     "start": "http-server docs -p 8080",
+    "build": "npm run css",
     "css": "gulp"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/studiomikan/studiomikan-website.git"
   },
-  "keywords": ["website", "sass", "javascript"],
+  "keywords": [
+    "website",
+    "sass",
+    "javascript"
+  ],
   "author": "okayu <studiomikan@gmail.com> (https://studiomikan.net/)",
   "license": "MIT",
   "bugs": {
