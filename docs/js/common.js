@@ -2,7 +2,9 @@
 var smoothScroll = new SmoothScroll('a[href*="#"]', {
   updateURL: false,
   easing: "easeInOutCubic",
-  offset: 0
+  offset: 0,
+  speed: 800,
+  speedAsDuration: true
 });
 // utils
 function addClass(elm, className) {

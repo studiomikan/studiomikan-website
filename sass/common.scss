@@ -15,7 +15,6 @@ $sp: 480px;
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
@@ -25,7 +24,6 @@ $sp: 480px;
   from {
     opacity: 1;
   }
-
   to {
     opacity: 0;
   }
@@ -36,7 +34,6 @@ $sp: 480px;
     opacity: 0;
     transform: translateX(-20px);
   }
-
   to {
     opacity: 1;
     transform: translateX(0);
@@ -48,7 +45,6 @@ $sp: 480px;
     opacity: 0;
     transform: translateX(20px);
   }
-
   to {
     opacity: 1;
     transform: translateX(0);
@@ -60,7 +56,6 @@ $sp: 480px;
     opacity: 0;
     transform: translateY(-20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -72,7 +67,6 @@ $sp: 480px;
     opacity: 0;
     transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -84,7 +78,6 @@ $sp: 480px;
     opacity: 1;
     transform: translateX(0);
   }
-
   to {
     opacity: 0;
     transform: translateX(-20px);
@@ -96,7 +89,6 @@ $sp: 480px;
     opacity: 1;
     transform: translateX(0);
   }
-
   to {
     opacity: 0;
     transform: translateX(20px);
@@ -113,8 +105,9 @@ $sp: 480px;
 
 html {
   font-size: 16px;
-  font-family: 'Noto Sans Japanese', 'Hiragino Kaku Gothic ProN', 'メイリオ', sans-serif;
-  font-weight: 200;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "メイリオ",
+    sans-serif;
+  font-weight: 400;
   height: 100%;
   padding: 0;
   margin: 0;
@@ -129,7 +122,7 @@ body {
   margin: 0;
   line-height: 1.4;
   animation-name: fadein;
-  animation-duration: 500ms;
+  animation-duration: 2000ms;
 }
 
 img {
@@ -164,7 +157,7 @@ a {
     &:after {
       content: "";
       position: absolute;
-      top: 2.0em;
+      top: 2em;
       display: inline-block;
       width: 0;
       height: 0;
@@ -192,7 +185,8 @@ a {
 }
 
 .graphfont {
-  font-family: 'Raleway', 'Noto Sans Japanese', 'Hiragino Kaku Gothic ProN', 'メイリオ', sans-serif;
+  font-family: "Raleway", "Noto Sans JP", "Hiragino Kaku Gothic ProN",
+    "メイリオ", sans-serif;
   font-weight: 400;
 }
 
@@ -220,7 +214,7 @@ header {
     width: 100%;
     height: 80px;
     background: rgba(255, 255, 255, 0.8);
-    border-bottom: solid 1px #AAAAAA;
+    border-bottom: solid 1px #aaaaaa;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
   }
 
@@ -336,7 +330,7 @@ header {
 #menu_icon.active {
   div:nth-of-type(1) {
     width: 43px;
-    background: #FFFFFF;
+    background: #ffffff;
     transform: translateY(13px) rotate(-315deg);
   }
 
@@ -346,7 +340,7 @@ header {
 
   div:nth-of-type(3) {
     width: 43px;
-    background: #FFFFFF;
+    background: #ffffff;
     transform: translateY(-13px) rotate(315deg);
   }
 }
@@ -400,7 +394,7 @@ header {
     position: relative;
     display: inline-block;
     text-decoration: none;
-    color: #FFFFFF;
+    color: #ffffff;
     transition: 300ms;
     padding: 5px 10px;
     margin: 20px 0;
@@ -468,7 +462,7 @@ header {
   text-align: right;
   font-size: 18px;
   line-height: 2.5em;
-  border-right: solid 1px #AAAAAA;
+  border-right: solid 1px #aaaaaa;
 
   @media (max-width: $ipadpro) {
     display: none;
@@ -479,10 +473,18 @@ header {
     animation-duration: 800ms;
     animation-fill-mode: both;
 
-    &.nav1 { animation-delay: 100ms; }
-    &.nav2 { animation-delay: 200ms; }
-    &.nav3 { animation-delay: 300ms; }
-    &.nav4 { animation-delay: 400ms; }
+    &.nav1 {
+      animation-delay: 100ms;
+    }
+    &.nav2 {
+      animation-delay: 200ms;
+    }
+    &.nav3 {
+      animation-delay: 300ms;
+    }
+    &.nav4 {
+      animation-delay: 400ms;
+    }
   }
 }
 
@@ -517,10 +519,18 @@ header {
     animation-name: slidein-from-left;
     animation-duration: 800ms;
     animation-fill-mode: both;
-    &.nav1 { animation-delay: 100ms; }
-    &.nav2 { animation-delay: 200ms; }
-    &.nav3 { animation-delay: 300ms; }
-    &.nav4 { animation-delay: 400ms; }
+    &.nav1 {
+      animation-delay: 100ms;
+    }
+    &.nav2 {
+      animation-delay: 200ms;
+    }
+    &.nav3 {
+      animation-delay: 300ms;
+    }
+    &.nav4 {
+      animation-delay: 400ms;
+    }
 
     span {
       position: absolute;
@@ -567,7 +577,7 @@ section {
 }
 
 #about {
-  &>div {
+  & > div {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -598,7 +608,7 @@ section {
 
     @keyframes draw-line {
       from {
-        width: 0
+        width: 0;
       }
 
       to {
@@ -610,7 +620,7 @@ section {
       display: block;
       height: 0;
       width: 0;
-      border-top: solid 1px #AAAAAA;
+      border-top: solid 1px #aaaaaa;
       margin-bottom: 20px;
       margin-left: -10px;
       animation-name: draw-line;
@@ -622,7 +632,7 @@ section {
 }
 
 #products {
-  &>div {
+  & > div {
     margin-left: auto;
     margin-right: auto;
 
@@ -656,7 +666,7 @@ section {
 
       @media (max-width: $ipadpro) {
         width: 250px;
-        height: 250px
+        height: 250px;
       }
 
       @media (max-width: $ipad) {
@@ -666,12 +676,12 @@ section {
       img {
         width: 300px;
         height: 300px;
-        transform: scale(1.0);
+        transform: scale(1);
         transition: 200ms;
 
         @media (max-width: $ipadpro) {
           width: 250px;
-          height: 250px
+          height: 250px;
         }
 
         &:hover {
@@ -714,7 +724,7 @@ section {
         line-height: 1em;
         margin-bottom: 20px;
         padding-bottom: 20px;
-        border-bottom: solid 1px #AAAAAA;
+        border-bottom: solid 1px #aaaaaa;
 
         img {
           height: 22px;
@@ -759,7 +769,7 @@ section {
 }
 
 #members {
-  &>div {
+  & > div {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -794,7 +804,7 @@ section {
       height: 150px;
       border-radius: 75px;
       margin-right: 40px;
-      border: solid 1px #AAAAAA;
+      border: solid 1px #aaaaaa;
 
       @media (max-width: $ipad) {
         margin-right: 0;
@@ -820,7 +830,7 @@ section {
 
         a {
           display: inline-block;
-          border: solid 1px #AAAAAA;
+          border: solid 1px #aaaaaa;
           border-radius: 5px;
           padding: 0 15px 0 10px;
           margin-bottom: 5px;
@@ -863,9 +873,8 @@ section {
   }
 }
 
-
 #contact {
-  &>div {
+  & > div {
     position: absolute;
     top: 50%;
     left: 50%;

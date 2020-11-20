@@ -1,0 +1,273 @@
+@charset "UTF-8";
+
+$ipadpro: 1024px;
+$ipad: 896px;
+$sp: 480px;
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Poppins", "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100%;
+  height: 100%;
+  background: #fff;
+  color: #333333;
+  padding: 0;
+  margin: 0;
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+button.imgbutton {
+  border: none;
+  background: none;
+  padding: 0;
+  outline: none;
+  max-width: 100%;
+  &:hover {
+    cursor: pointer;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+
+a.imgbutton {
+  border: none;
+  background: none;
+  padding: 0;
+  outline: none;
+  max-width: 100%;
+  &:hover {
+    cursor: pointer;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+
+header {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  // height: 64px;
+  overflow: visible;
+  background: none;
+  color: #ffffff;
+  vertical-align: middle;
+
+  nav {
+    position: relative;
+    max-width: $ipadpro;
+    margin: 0 auto;
+    button.menu {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      right: 0;
+      border: none;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 0;
+      margin: 0;
+      outline: none;
+      width: 64px;
+      height: 64px;
+      border-radius: 0 0 4px 4px;
+      &:hover {
+        cursor: pointer;
+      }
+      &.transparent {
+        background: rgba(0, 0, 0, 0);
+      }
+      img {
+        height: 36px;
+      }
+    }
+  }
+  &.only-menu {
+    nav {
+      img.logo {
+        display: none;
+        opacity: 0;
+      }
+    }
+  }
+  #menu_popup {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    &.hidden {
+      display: none;
+    }
+
+    .list-wrapper {
+      width: 100%;
+      max-width: $ipadpro;
+      margin: 0 auto;
+
+      ul {
+        float: right;
+        padding: 64px 0 16px 0;
+        margin: 0;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 0 0 4px 4px;
+        li {
+          a {
+            display: block;
+            width: 100%;
+            padding: 16px 32px;
+            font-size: 16px;
+            line-height: 1;
+            color: #ffffff;
+            color: #ffffff;
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+#main_visual {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  img.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .logo-wrapper {
+    position: relative;
+    // top: 0;
+    // left: 0;
+    width: 100%;
+    max-width: $ipadpro;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    line-height: 1;
+
+    .logo {
+      display: inline-block;
+      color: #ffffff;
+      font-size: 24px;
+      margin-left: 16px;
+      img {
+        width: 600px;
+        margin-bottom: 24px;
+        max-width: 90%;
+      }
+      @media (max-width: 700px) {
+        font-size: 18px;
+        img {
+          width: 400px;
+        }
+      }
+      @media (max-width: 450px) {
+        font-size: 16px;
+        img {
+          width: 300px;
+        }
+      }
+    }
+  }
+}
+
+#main_container {
+  margin: 32px 0;
+
+  article {
+    position: relative;
+    width: 100%;
+    max-width: $ipadpro;
+    margin: 0 auto;
+    padding: 32px 16px;
+  }
+
+  article.full-width {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 16px auto;
+    padding: 48px 0;
+
+    img.bg {
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: $ipadpro;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .color-white {
+      color: #ffffff;
+    }
+  }
+
+  h2 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 32px;
+  }
+
+  p {
+    margin-bottom: 1em;
+  }
+
+  ul {
+    list-style-type: disc;
+    padding-left: 1.5em;
+
+    li {
+      margin-bottom: 0.5em;
+    }
+  }
+}
+
+#copyright {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  padding: 16px;
+}
