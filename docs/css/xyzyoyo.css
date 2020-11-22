@@ -1,0 +1,249 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Poppins", "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100%;
+  height: 100%;
+  background: #fff;
+  color: #333333;
+  padding: 0;
+  margin: 0;
+  line-height: 1.4;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+button.imgbutton {
+  border: none;
+  background: none;
+  padding: 0;
+  outline: none;
+  max-width: 100%;
+}
+button.imgbutton:hover {
+  cursor: pointer;
+}
+button.imgbutton img {
+  max-width: 100%;
+}
+
+a.imgbutton {
+  border: none;
+  background: none;
+  padding: 0;
+  outline: none;
+  max-width: 100%;
+}
+a.imgbutton:hover {
+  cursor: pointer;
+}
+a.imgbutton img {
+  max-width: 100%;
+}
+
+header {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  overflow: visible;
+  background: none;
+  color: #ffffff;
+  vertical-align: middle;
+}
+header nav {
+  position: relative;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+header nav button.menu {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  border: none;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0;
+  margin: 0;
+  outline: none;
+  width: 64px;
+  height: 64px;
+  border-radius: 0 0 4px 4px;
+}
+header nav button.menu:hover {
+  cursor: pointer;
+}
+header nav button.menu.transparent {
+  background: rgba(0, 0, 0, 0);
+}
+header nav button.menu img {
+  height: 36px;
+}
+header.only-menu nav img.logo {
+  display: none;
+  opacity: 0;
+}
+header #menu_popup {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+header #menu_popup.hidden {
+  display: none;
+}
+header #menu_popup .list-wrapper {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+header #menu_popup .list-wrapper ul {
+  float: right;
+  padding: 64px 0 16px 0;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 0 0 4px 4px;
+}
+header #menu_popup .list-wrapper ul li a {
+  display: block;
+  width: 100%;
+  padding: 16px 32px;
+  font-size: 16px;
+  line-height: 1;
+  color: #ffffff;
+  color: #ffffff;
+  text-decoration: none;
+}
+header #menu_popup .list-wrapper ul li a:hover {
+  text-decoration: underline;
+}
+
+#main_visual {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+#main_visual img.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#main_visual .logo-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1024px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  line-height: 1;
+}
+#main_visual .logo-wrapper .logo {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 24px;
+  margin-left: 16px;
+}
+#main_visual .logo-wrapper .logo img {
+  width: 600px;
+  margin-bottom: 24px;
+  max-width: 90%;
+}
+@media (max-width: 700px) {
+  #main_visual .logo-wrapper .logo {
+    font-size: 18px;
+  }
+  #main_visual .logo-wrapper .logo img {
+    width: 400px;
+  }
+}
+@media (max-width: 450px) {
+  #main_visual .logo-wrapper .logo {
+    font-size: 16px;
+  }
+  #main_visual .logo-wrapper .logo img {
+    width: 300px;
+  }
+}
+
+#main_container {
+  margin: 32px 0;
+}
+#main_container article {
+  position: relative;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+#main_container article.full-width {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto 16px auto;
+  padding: 48px 0;
+}
+#main_container article.full-width img.bg {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#main_container article.full-width .content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+#main_container article.full-width .color-white {
+  color: #ffffff;
+}
+#main_container h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+#main_container p {
+  margin-bottom: 1em;
+}
+#main_container ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+}
+#main_container ul li {
+  margin-bottom: 0.5em;
+}
+
+#copyright {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  padding: 16px;
+}
+
+/*# sourceMappingURL=xyzyoyo.css.map */

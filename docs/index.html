@@ -39,8 +39,8 @@
   <!-- lib -->
   <link rel="stylesheet" type="text/css" href="./lib/animate.min.css">
   <!-- font -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css">
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:200,400">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Raleway&display=swap" rel="stylesheet">
   <!-- style -->
   <link rel="stylesheet" type="text/css" href="./css/reset.css" media="all">
   <link rel="stylesheet" type="text/css" href="./css/common.css" media="all">
@@ -130,6 +130,33 @@
   <section id="products" data-paging-section>
     <h2 class="section-title graphfont">Products:</h2>
     <div>
+      <div class="product right">
+        <a class="thumbnail" href="./xyzyoyostudio/">
+          <img src="./img/thumb_xyzyoyostudio.png" alt="XYZ YoYo Studio">
+        </a>
+        <div class="content">
+          <div class="title">
+            <a href="./xyzyoyostudio/">XYZ YoYo Studio</a>
+          </div>
+          <div class="summary">
+            3D Printed YoYo
+            <span class="h-line">|</span>
+            <img src="./img/mdi-printer-3d.svg">
+            <img src="./img/mdi-cart.svg">
+          </div>
+          <div class="details">
+            <p>
+              スタジオ蜜柑のプロデュースするヨーヨーブランドです。<br>
+              家庭用3Dプリンター製ヨーヨーの設計・開発・販売を目的として、<br>
+              2020年に活動を開始しました。
+            </p>
+            <p>
+              3Dプリンターならではのヨーヨー、関連グッズ制作を通して、<br>
+              家庭用3Dプリンターの可能性を探っています。
+            </p>
+          </div>
+        </div>
+      </div>
       <div class="product left">
         <a class="thumbnail" href="https://github.com/studiomikan/ponkan3">
           <img src="./img/thumb_ponkan3.png" alt="Ponkan3">
@@ -316,7 +343,6 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
-  </script>
   <script src="https://cdn.jsdelivr.net/npm/bubbly-bg@1.0.0/dist/bubbly-bg.js"></script>
   <script type="text/javascript" src="./js/common.js"></script>
 </body>

@@ -13,3 +13,4 @@ npm run build
 
 - Smooth Scroll https://github.com/cferdinandi/smooth-scroll
 - bubbly-bg https://github.com/tipsy/bubbly-bg
+- AOS https://github.com/michalsnik/aos
